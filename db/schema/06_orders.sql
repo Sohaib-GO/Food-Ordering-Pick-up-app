@@ -11,5 +11,5 @@ CREATE TABLE orders (
   restaurant_ETA TIME NOT NULL,
   user_request VARCHAR(255) NOT NULL,
   order_total DECIMAL(10,2) NOT NULL,
-  delivered_time TIMESTAMP NOT NULL,
+  delivered_time TIMESTAMP NOT NULL
 );
