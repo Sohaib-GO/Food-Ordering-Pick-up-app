@@ -1,0 +1,7 @@
+DROP IF EXISTS messages CASCADE;
+
+CREATE TABLE messages (
+  id SERIAL PRIMARY KEY NOT NULL,
+  order_id INTEGER REFERENCES orders(id),
+  content VARCHAR(255) NOT NULL
+);
