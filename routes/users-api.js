@@ -5,23 +5,31 @@
  * See: https://expressjs.com/en/guide/using-middleware.html#middleware.router
  */
 
-const express = require('express');
-const router  = express.Router();
-const userQueries = require('../db/queries/users');
+const express = require("express");
+const router = express.Router();
+const userQueries = require("../db/queries/users");
+const menuQueries = require("../db/queries/search_menu");
 
-router.get('/', (req, res) => {
-  userQueries.getUsers()
-    .then(users => {
+router.get("/", (req, res) => {
+  userQueries
+    .getUsers()
+    .then((users) => {
       res.json({ users });
     })
-    .catch(err => {
-      res
-        .status(500)
-        .json({ error: err.message });
+    .catch((err) => {
+      res.status(500).json({ error: err.message });
     });
 });
 
-
-
+router.get("/search", (req, res) => {
+  menuQueries
+    .searchMenu(req.query.search)
+    .then((items) => {
+      res.json({ items });
+    })
+    .catch((err) => {
+      res.status(500).json({ error: err.message });
+    });
+});
 
 module.exports = router;
