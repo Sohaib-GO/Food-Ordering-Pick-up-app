@@ -36,6 +36,7 @@ body * {
     position: relative;
     border-radius: 20px;
     display: flex;
+    flex-direction:row;
     align-items: flex-start;
     justify-content: center;
     background: #8251ae;
@@ -44,6 +45,7 @@ body * {
     width:300px !important;
     margin-top: 1rem;
     margin-bottom: 5rem;
+    margin-left: 40%;
   
   }
   
@@ -53,6 +55,42 @@ body * {
     padding: 35px;
   }
   
+  .fav-food {
+    
+    margin-top: 10%;
+    display: flex;
+    justify-content: space-evenly;
+    
+  }
+
+  .food-list__item {
+    list-style-type: none;
+    justify-content: space-between;
+    justify-content: space-around;
+
+  }
+  .food-image {
+    width: 257px;
+    height: 232px;
+    border-radius: 20%;
+    // margin-left: 5%;
+    // padding: 5%;
+    
+  }
+.food-name, .food-price {
+  text-align: center;
+  font-weight:lighter;
+  font-family: 'Rubik Bubbles', cursive;
+  font-size: large;
+  color: rgb(114, 175, 239);
+}
+.popular-food {
+  display: flex;
+  justify-content: center;
+  font-family: 'Rubik Bubbles', cursive;
+  font-size: large;
+}
+
   
   
   .content-box {
