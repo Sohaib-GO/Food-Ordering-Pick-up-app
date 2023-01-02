@@ -32,22 +32,18 @@ body * {
     font-size: .7rem;
   }
   .logo {
-<<<<<<< HEAD
-    width: 200px;
-    height: 30;
     display: flex;
-    flex-direction: row;
-    color: #f9b02d;
-    font-weight: bold;
 
-  }
-  
-=======
-    display: flex;
     font-family: 'Righteous', cursive;
     font-weight: bold;
     font-size:4rem;
     color: #8251ae;
+  }
+  .nav-top {
+    display: flex;
+  }
+  .nav-right {
+   padding-left:50%;
   }
   .ulogo{
     display: flex;
@@ -67,7 +63,6 @@ body * {
     padding-bottom: 5px;
     margin-bottom: 5px;
   }
->>>>>>> main_page
   .menu-container {
     position: relative;
     border-radius: 20px;
@@ -93,7 +88,7 @@ body * {
   
   .fav-food {
     
-    margin-top: 10%;
+    margin-top: 3%;
     display: flex;
     justify-content: space-evenly;
     
@@ -120,21 +115,22 @@ body * {
   font-family: 'Rubik Bubbles', cursive;
   font-size: large;
   color: rgb(114, 175, 239);
-<<<<<<< HEAD
 }
-=======
 
-}
+
 .price {
   padding-bottom: 15px;
 }
 
->>>>>>> main_page
 .popular-food {
+  
   display: flex;
   justify-content: center;
+  align-items: center;
+  color: #8251ae;
   font-family: 'Rubik Bubbles', cursive;
-  font-size: large;
+  font-size: 1rem;
+   
 }
 
   
