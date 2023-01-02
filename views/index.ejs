@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="/styles/index.css"/>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
   <script src="https://cdn.tailwindcss.com"></script>
   
   <link rel="stylesheet" href="./css.css" /> 
@@ -17,19 +18,13 @@
   <title>Home Page</title>
 </head>
 <body>
+
+  
   <div class="flex main" >
     <div class="main px-16 border-r border-gray-200">
-      <div class="h-12 mt-8 flex items-center">
-        <i class="fa fa-bars cursor-pointer"></i>
-        <h6 class="font-bold text-lg mx-10">Restaurant name</h6>
-        <div class="flex items-center ml-auto bg-gray-100 self-stretch custom-rounded px-4 w-2/3">
-          <i class="fa fa-search"></i>
-          <input type="text" class="px-4 self-stretch bg-transparent flex-grow outline-none" placeholder="Search">
-        </div>
-      </div>
-      <div class="grid grid-cols-3 bg-orange-100 mt-12 rounded-lg">
-        <div>
-          <img src="https://image.freepik.com/free-vector/vector-cartoon-illustration-traditional-set-fast-food-meal_1441-331.jpg" alt="fooood" class="self-end">
+      <div class="grid grid-cols-3 bg-orange-100 mt-12 rounded-lg ">
+        <div >
+          <img src="https://image.freepik.com/free-vector/vector-cartoon-illustration-traditional-set-fast-food-meal_1441-331.jpg" alt="fooood" >
         </div>
         <div class="row-auto flex flex-col justify-center items-center">
           <h3 class="tracking-wide text-orange-600 text-lg ml-6">$0 delivery for 30 days!&nbsp;&nbsp;&nbsp;🎉</h3>
@@ -97,11 +92,40 @@
 
     </div>
     <div class="bg-gray-100 sidebar  ">
-      <div class="px-6">
-        <div class="h-12 mt-8 flex justify-center items-center">
+      <header class="headerContainer">
+          
+        <ul class="navigation-list">
+          <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+            <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
+          </form>
+         
+            <!-- <div class="flex items-center ml-auto bg-gray-100 self-stretch custom-rounded px-4 w-2/3"> -->
+              <!-- <i class="fa fa-search"></i>
+              <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+                <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
+              </form>
+            </div> -->
+          
+          <li >
+            <a class="navItems" href="login.ejs">Login</a>
+          </li>
+          <li>
+            <a class="navItems" href="signup.ejs#about" target="_blank">Register</a>
+          </li>
+          <li>
+            <a class="navItems" href="contact.ejs#contact"target="_blank">Contact</a>
+          </li> 
+          
+          
+        </ul>
+   
+    </header> 
+       <div class="px-6">
+
+          <div class="h-12 mt-8 flex justify-center items-center">
           <i class="fa fa-user"></i>
           <div class="rounded-lg bg-yellow-400 px-3 font-bold text-xs py-1 ml-6">3</div>
-        </div>
+        </div> 
         <div class="mt-12">
           <p class="font-medium text-xl">My Order 😎</p>
         </div>
@@ -127,7 +151,7 @@
             {{item.price}}
           </div>
         </div>
-                         <div class="grid grid-cols-4 gap-1 mb-5">
+        <div class="grid grid-cols-4 gap-1 mb-5">
           <div class="h-10 rounded-lg bg-orange-200 flex">
             <i class="fa fa-car m-auto text-orange-500"></i>
            </div>
@@ -139,7 +163,7 @@
             $0.00
           </div>
         </div>
-      </div>
+      </div> 
       <div class="flex-grow flex flex-col pl-6 justify-end">
           <div class="flex justify-between items-center border-b-2 pb-2">
             <span>Total:</span>
@@ -160,5 +184,12 @@
         </div>
         </div>
     </div>
+    
   </div>
+  <footer class="footer">
+    
+    <button class="btn" type="button" name="button">
+      <a href="" #top="">Top</a>
+    </button>
+  </footer>
 </html>
