@@ -31,6 +31,15 @@ body * {
   .text-xxs {
     font-size: .7rem;
   }
+  .logo {
+    width: 200px;
+    height: 30;
+    display: flex;
+    flex-direction: row;
+    color: #f9b02d;
+    font-weight: bold;
+
+  }
   
   .menu-container {
     position: relative;
@@ -67,6 +76,7 @@ body * {
     list-style-type: none;
     justify-content: space-between;
     justify-content: space-around;
+    padding-left: 30px;
 
   }
   .food-image {
@@ -140,9 +150,10 @@ body * {
   }
   
   .headerContainer{
+    
     display: flex;
-    width: 100%;
-    padding: 20px;
+    flex-direction: row;
+    
   }
   .page-header-item{
     flex:0 1 200px;
@@ -153,16 +164,33 @@ body * {
   }
   
   .navigation-list{
+    width: 120%;
+    height: 3rem;
+    padding: 30px;
+    background-color: #FACC14;
     list-style-type: none;
-  
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+
   }
   .navigation-list li{
+  
     display: inline-block;
     margin-left: 15px;
     text-decoration: none;
   }
   .navItems{
     text-decoration:none;
+    
+    
+  }
+  .search {
+    border-radius: 5%;
+    display: flex;
+    align-items:flex-start;
+    width: 110px;
+    
   }
   .footer{
     clear: both;
@@ -170,3 +198,17 @@ body * {
     flex-direction: column;
     text-align: center;
   }
+  .header{
+    width: 100%;
+    height: 4rem;
+    background-color: #8251ae;
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .nav{
+    display: flex;
+  }
+
