@@ -33,10 +33,17 @@ body * {
   }
   .logo {
     display: flex;
+
     font-family: 'Righteous', cursive;
     font-weight: bold;
     font-size:4rem;
     color: #8251ae;
+  }
+  .nav-top {
+    display: flex;
+  }
+  .nav-right {
+   padding-left:50%;
   }
   .ulogo{
     display: flex;
@@ -81,7 +88,7 @@ body * {
   
   .fav-food {
     
-    margin-top: 10%;
+    margin-top: 3%;
     display: flex;
     justify-content: space-evenly;
     
@@ -116,10 +123,14 @@ body * {
 }
 
 .popular-food {
+  
   display: flex;
   justify-content: center;
+  align-items: center;
+  color: #8251ae;
   font-family: 'Rubik Bubbles', cursive;
-  font-size: large;
+  font-size: 1rem;
+   
 }
 
   
