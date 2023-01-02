@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+      integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <main style="margin: 1em;">
+        <h2>Login</h2>
+        <form class="form-inline" action="/users/login" method="POST">
+          <label for="email">Email</label>
+          <input class="form-control" type="email" name="email" placeholder="email"/>
+          <label for="password">Password</label>
+          <input class="form-control" type="password" name="password" placeholder="password"/>
+          <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+      </main>
