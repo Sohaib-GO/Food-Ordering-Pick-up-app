@@ -1,26 +1,43 @@
 {
   "name": "node-skeleton",
   "version": "1.0.0",
-  "description": "",
+  "description": "LHL Node Skeleton =========",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "local": "./node_modules/.bin/nodemon -L --ignore public/",
+    "local": "nodemon -L --ignore public/",
     "db:reset": "node bin/resetdb.js"
   },
   "author": "Lighthouse Labs",
   "license": "ISC",
   "dependencies": {
     "chalk": "^2.4.2",
+    "cookie-session": "^2.0.0",
     "dotenv": "^2.0.0",
     "ejs": "^2.6.2",
     "express": "^4.17.1",
     "morgan": "^1.9.1",
+    "node-sass": "^8.0.0",
     "pg": "^8.5.0",
     "sass": "^1.35.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.10"
-  }
+  },
+  "bin": {
+    "node-skeleton": "resetdb.js"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sohaib-GO/Project-02.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/Sohaib-GO/Project-02/issues"
+  },
+  "homepage": "https://github.com/Sohaib-GO/Project-02#readme"
 }
