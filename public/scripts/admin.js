@@ -1,32 +1,25 @@
+import { displayMenu } from "./menu-items.js";
+
 // fetch all menu items when the page loads
-$(() => {
+const refresh = $(() => {
+  // fetch all menu items when the page loads
   $.ajax({
     method: "GET",
     url: "/api/admin",
   }).done((response) => {
-    const $menuItemsList = $("#menu-items");
-    $menuItemsList.empty();
+    displayMenu(response.menuItems);
+    if (response.menuItems.length === 0) {
+      $("#menu-items").append("<p>No menu items available</p>");
+    }
+    const htmlElement = document.querySelector("html");
+    const filePath = htmlElement.getAttribute("data-filepath");
 
-    for (const item of response.menuItems) {
-      const $menuItem = $(`<li class="menu-item" data-id="${item.id}">`).text(
-        `${item.food_name} ` +
-          ` ${item.food_description} ` +
-          ` ${item.price} ` +
-          ` ${item.food_category} ` +
-          ` ${item.image_url} `
-      );
-      const $updateButton = $(
-        '<button class="update-menu-item-button">Update</button>'
-      );
-      const $deleteButton = $(
+    if (filePath === "../../views/admin.ejs") {
+      $(".empty").append(
+        '<button class="update-menu-item-button">Update</button>',
         '<button class="delete-menu-item-button">Delete</button>'
       );
-      $menuItem.append($updateButton, $deleteButton);
-      $menuItemsList.append($menuItem);
     }
-
-    // hide the update form when the page loads
-    $("#menu-item-template").hide();
   });
 });
 
@@ -62,14 +55,15 @@ $("#create-menu-item-button").on("click", (event) => {
 
 // delete a menu item when the delete button is clicked
 $(document).on("click", ".delete-menu-item-button", function () {
-  const $menuItem = $(this).closest(".menu-item");
-  const id = $menuItem.data("id");
+  // Get the id of the menu item to delete
+  const id = $(this).closest(".menu-container").data("id");
 
   $.ajax({
     method: "DELETE",
     url: `/api/admin/${id}`,
   }).done(() => {
-    $menuItem.remove();
+    // Remove the menu item container from the page
+    $(this).closest(".menu-container").remove();
   });
 });
 
@@ -80,7 +74,7 @@ $(document).on("click", ".update-menu-item-button", function () {
   const foodCategory = $("#food-category").val();
   const imageUrl = $("#image-url").val();
 
-  const $menuItem = $(this).closest(".menu-item");
+  const $menuItem = $(this).closest(".menu-container");
   const id = $menuItem.data("id");
 
   $.ajax({

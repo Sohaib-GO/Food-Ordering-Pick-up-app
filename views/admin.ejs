@@ -1,7 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html data-filepath="../../views/admin.ejs">
   <head>
     <title>Menu Admin</title>
+    <link rel="stylesheet" href="/styles/main.css" />
+    <link rel="stylesheet" href="/styles/layout.css"/>
+    <link rel="stylesheet" href="/styles/index.css"/>
+  
   </head>
   <!-- HTML for creating a new menu item -->
 <div id="create-menu-item-form">
@@ -26,8 +30,6 @@
 
 <!-- HTML for displaying a list of all menu items -->
 <div id="menu-items">
-  <h2>Menu Items</h2>
-  <ul id="menu-item-list"></ul>
 
 </div>
 
@@ -58,7 +60,7 @@
 </div> -->
 
 <script src="/vendor/jquery-3.0.0.js"></script>
-<script defer src="/scripts/admin.js"></script>
+<script type="module" defer src="/scripts/admin.js"></script>
 </body>
 </html>
 
