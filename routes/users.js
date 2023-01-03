@@ -59,9 +59,7 @@ router.get('/register', (req, res) => {
     return res.render('homepage', templateVars);
 });
 
-router.get('/', (req, res) => {
-  return res.render('menu');
-});
+
 
 
 
@@ -121,10 +119,6 @@ router.post('/logout', (req, res) => {
 });
 
 
-// CONTACT GET ROUTE
 
-router.get('/contact', (req, res) => {
-  return res.render('contact');
-});
 
 module.exports = router;

@@ -2,7 +2,7 @@
   <nav>
     <% if (username) { %>
         <a class="active" href="/homepage">Home</a>
-        <a class="nav-item nav-link-left" href="/Menu">Menu</a>
+        <a class="nav-item nav-link-left" href="/menu">Menu</a>
         <a class="nav-item nav-link-left" href="/contact">Contact</a>
         <h5>Logged in as: <%= username.email %></h5>
         <form action="/logout" method="POST">
