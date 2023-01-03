@@ -34,21 +34,6 @@ router.post("/", (req, res) => {
     });
 });
 
-// Read a single menu item
-router.get("/:id", (req, res) => {
-  menuQueries
-    .getMenuItemById(req.params.id)
-    .then((menuItem) => {
-      if (!menuItem) {
-        res.sendStatus(404);
-        return;
-      }
-      res.json({ menuItem });
-    })
-    .catch((err) => {
-      res.status(500).json({ error: err.message });
-    });
-});
 
 // Update a single menu item
 router.put("/:id", (req, res) => {

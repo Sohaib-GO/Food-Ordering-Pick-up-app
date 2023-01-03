@@ -58,7 +58,11 @@
       </div>
       <div class="fav-food">
      
-
+        <ul class="navigation-list">
+          <ul id="search-results"></ul>
+          <input type="text" id="search-input" name="search" placeholder="Search for a dish" />
+          <button id="search-button">Search</button>
+        </ul>
     </div>
 
     <div id="menu-items">
@@ -68,32 +72,21 @@
 
     </div>
     <div class="bg-gray-100 sidebar  ">
-      <header class="headerContainer">
+      <header class="nav">
           
-        <ul class="navigation-list">
-          <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
-            <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
-          </form>
-         
-            <!-- <div class="flex items-center ml-auto bg-gray-100 self-stretch custom-rounded px-4 w-2/3"> -->
-              <!-- <i class="fa fa-search"></i>
-              <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
-                <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
-              </form>
-            </div> -->
           
           <li >
-            <a class="navItems" href="login.ejs">Login</a>
+            <a class="navItems m-1" href="/login">Login</a>
           </li>
           <li>
-            <a class="navItems" href="signup.ejs#about" target="_blank">Register</a>
+            <a class="navItems m-1" href="/signup" target="_blank">Register</a>
           </li>
           <li>
-            <a class="navItems" href="contact.ejs#contact"target="_blank">Contact</a>
+            <a class="navItems m-1" href="contact.ejs#contact"target="_blank">Contact</a>
           </li> 
           
           
-        </ul>
+       
    
     </header> 
        <div class="px-6">
@@ -170,6 +163,7 @@
   </footer>
   <script src="/vendor/jquery-3.0.0.js"></script>
   <script type="module" defer src="/scripts/admin.js"></script>
+  <script  type="module" defer src="/scripts/users.js"></script>
   </html>
     
   </div>

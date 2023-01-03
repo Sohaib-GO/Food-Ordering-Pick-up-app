@@ -27,16 +27,6 @@ const createMenuItem = async (foodName, foodDescription, price, foodCategory, im
   }
 };
 
-// Read a single menu item
-const getMenuItemById = async (id) => {
-  try {
-    const result = await db.query("SELECT * FROM menus WHERE id = $1", [id]);
-    return result.rows[0];
-  } catch (error) {
-    console.error(error);
-    throw error;
-  }
-};
 
 // Update a single menu item
 const updateMenuItem = async (id, foodName, foodDescription, price, foodCategory, imageUrl) => {
@@ -65,6 +55,6 @@ const deleteMenuItem = async (id) => {
   }
 };
 
-module.exports = { getAllMenuItems, createMenuItem, getMenuItemById, updateMenuItem, deleteMenuItem };
+module.exports = { getAllMenuItems, createMenuItem, updateMenuItem, deleteMenuItem };
 
 
