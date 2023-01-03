@@ -2,11 +2,21 @@
     <main style="margin: 1em;">
       <h2>Create User</h2>
         <form class="form-inline" action="/register" method="POST">
+          <div>
+            <label for="name">name</label>
+            <input class="form-control" type="text" name="name" placeholder="name"/>
+          </div>
+          <div>
+            <label for="email">phone number</label>
+            <input class="form-control" type="number" name="phone_number" placeholder="phone number"/>
+          </div>
           <label for="email">Email</label>
           <input class="form-control" type="email" name="email" placeholder="email"/>
           <label for="password">password</label>
           <input class="form-control" type="password" name="password" placeholder="password"/>
-          <button type="submit" class="btn btn-primary">register</button>
+          <div>
+            <button type="submit" class="btn btn-primary">register</button>
+          </div>
         </form>
     </main>
 </body>

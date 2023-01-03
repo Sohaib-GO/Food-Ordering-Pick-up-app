@@ -10,7 +10,6 @@ router.use(cookieSession({
 
 const getUserByEmail = (email, database) => {
     for (let id in database) {
-        console.log(database[id])
       if (email === database[id].email) {
         return database[id];
       }
