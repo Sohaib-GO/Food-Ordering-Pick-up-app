@@ -4,9 +4,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <%- include('partials/_header') %>
 </head>
 <body>
-    
+    <h3>My account</h3>
+    <table class="user_info_table">
+        <thead>
+           <% if (username === usersDb[user_id]) { %>
+
+                <tr>
+                    <td scope ="col">name</td>
+                    <td><%= usersDb[user_id].name %></td>
+                </tr>
+                <tr>
+                    <td scope ="col">phone number</td>
+                    <td><%= usersDb[user_id].phone_number %></td>
+                </tr>
+                <tr>
+                    <td scope ="col">email</td>
+                    <td><%= usersDb[user_id].email %></td>
+                </tr>
+                <tr>
+                    <td scope ="col">password</td>
+                    <td><%= usersDb[user_id].password %></td>
+                </tr>
+            <% } %>
+        <tbody>
+                <tr>
+                    <td> </td>
+                </tr>
+
+        </tbody>
+        </thead>
+    </table>
 </body>
 </html>
