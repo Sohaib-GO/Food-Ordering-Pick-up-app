@@ -1,0 +1,47 @@
+.right-div {
+  background-color: bisque;
+  width: 1400px;
+  height: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 20%;
+  margin-top: 5%;
+}
+input {
+  background-color: rgb(238, 245, 240);
+}
+p {
+  
+  font-family: 'Rubik Bubbles', cursive;;
+}
+.main-div {
+  position: relative;
+}
+.right-side {
+  display: block;
+  justify-content:flex-end;
+  flex-direction: column;
+  align-items:center ;
+  margin-left: 60%;
+}
+.left-div {
+  display: flex;
+  justify-content:flex-start;
+  flex-direction: column;
+  align-items:center ;
+  margin-right: 60%;
+}
+
+.register {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+  border-radius: 10px;
+  width: 150px;
+  background-color: rgb(118, 118, 240);
+  color: antiquewhite;
+  font-family: 'Rubik Bubbles', cursive;
+
+}
