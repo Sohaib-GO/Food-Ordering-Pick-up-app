@@ -28,6 +28,8 @@ router.post('/', (req, res) => {
   const email = req.body.email;
   const password = req.body.password;
   const id = genRandomString();
+  const name = req.body.name;
+  const phone_number = req.body.phone_number;
 
   if(!email || !password) {
     return res.send("Status Code 400 empty email or password box");
@@ -37,7 +39,8 @@ router.post('/', (req, res) => {
     return res.send("Error user already exists");
   }
   
-  usersDb[id] = {id, password, email}
+  usersDb[id] = {id, password, email, name, phone_number};
+  console.log(usersDb[id]);
   req.session.user_id = usersDb[id].id;
   return res.redirect('/homepage');
 });
