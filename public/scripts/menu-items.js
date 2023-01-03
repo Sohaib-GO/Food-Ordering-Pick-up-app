@@ -13,8 +13,8 @@ export function displayMenu(menuItems) {
     const empty = $(`<div class="empty">`);
 
     $contentBox.append($name, $description, $btn);
-    $menuContainer.append($img, $contentBox );
-    $menuContainer.append(empty); 
+    $menuContainer.append($img, $contentBox);
+    $menuContainer.append(empty);
     $("#menu-items").append($menuContainer);
   }
-};
+}

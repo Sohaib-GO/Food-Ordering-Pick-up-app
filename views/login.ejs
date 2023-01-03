@@ -1,22 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <!-- Bootstrap CSS -->
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
-      integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
-      crossorigin="anonymous"
-    />
-  </head>
-  <body>
-    <main style="margin: 1em;">
-        <h2>Login</h2>
-        <form class="form-inline" action="/users/login" method="POST">
-          <label for="email">Email</label>
-          <input class="form-control" type="email" name="email" placeholder="email"/>
-          <label for="password">Password</label>
-          <input class="form-control" type="password" name="password" placeholder="password"/>
-          <button type="submit" class="btn btn-primary">Login</button>
-        </form>
-      </main>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>login page</title>
+  <link href="https://fonts.googleapis.com/css?family=Assistant:400,700" rel="stylesheet">
+  <link rel="stylesheet" href="/styles/login.css">
+
+</head>
+
+<body>
+  <header>
+    <%- include('partials/_header') %>
+  </header>
+
+  <section class='login' id='login'>
+    <div class='head'>
+    <h1 class='company'>Login</h1>
+    </div>
+    <div class='form'>
+      <form>
+    <input type="text" placeholder='Username' class='text' id='username' required><br>
+    <input type="password" placeholder='Password' class='password'><br>
+    <a class='btn-login' i>Login</a>
+      </form>
+    </div>
+    <%- include('partials/_footer') %>
+  </section>
+  
+
+ 
+
+
+</body>
+</html>

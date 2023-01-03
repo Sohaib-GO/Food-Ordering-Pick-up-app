@@ -23,7 +23,6 @@ const refresh = $(() => {
   });
 });
 
-
 // create a new menu item when the form is submitted
 $("#create-menu-item-button").on("click", (event) => {
   event.preventDefault();
