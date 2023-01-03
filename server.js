@@ -60,6 +60,9 @@ app.use('/login', loginRoutes);
 app.use('/contact', contactRoutes);
 app.use('/menu', menuRoutes);
 app.use('/logout', logoutRoutes);
+app.use('/admin', adminRoutes);
+app.use('/api/admin', adminApi);
+
 
 
 // Note: mount other resources here, using the same pattern above
