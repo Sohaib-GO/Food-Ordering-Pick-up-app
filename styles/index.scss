@@ -230,15 +230,33 @@ body * {
   }
   
   .navigation-list{
-    width: 120%;
+    width: 80%;
     height: 3rem;
     padding: 30px;
+    border-radius: 10px;
     background-color: #FACC14;
     list-style-type: none;
     display: flex;
     align-items:center;
     justify-content: space-between;
+    margin-bottom: 15px;
 
+  }
+
+  #search-button {
+    border: #fff 1px solid;
+    border-radius: 5px;
+    background-color: #000000;
+    color: #ffffff;
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+margin-right: 5rem;
+
+  }
+  .navigation-list input {
+border-radius: 5px;
+width: 50%;
   }
   .navigation-list li{
   

@@ -1,3 +1,6 @@
+import { displayMenu } from "./menu-items.js";
+
+
 
 // Client facing scripts here
 $(() => {
@@ -26,14 +29,13 @@ $("#search-button").on("click", () => {
       search: searchTerm,
     },
   }).done((response) => {
-    const $searchResultsList = $("#search-results");
-    $searchResultsList.empty();
+   console.log(response);
+// clear the menu items list
+    $("#menu-items").empty();
+   displayMenu(response.items);
 
-    for (const item of response.items) {
-      $(`<li class="search-result">`)
-        .text(`${item.food_name} `)
-        .appendTo($searchResultsList);
-    }
+
+    
+
   });
-});
-
+  });
