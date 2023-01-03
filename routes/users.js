@@ -4,18 +4,18 @@
  *   these routes are mounted onto /users
  * See: https://expressjs.com/en/guide/using-middleware.html#middleware.router
  */
-const cookieSession = require('cookie-session');
-const express = require('express');
-const router  = express.Router();
+const cookieSession = require("cookie-session");
+const express = require("express");
+const router = express.Router();
 
 router.use(cookieSession({
   name: 'session',
   keys: ['supersecretkey'],
 }));
 
-router.get('/', (req, res) => {
-  res.render('users');
-});
 
+router.get('/', (req, res) => {
+  return res.render('users');
+});
 
 module.exports = router;
