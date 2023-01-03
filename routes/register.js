@@ -36,7 +36,10 @@ router.post('/', (req, res) => {
   if (getUserByEmail(email, usersDb)) {
     return res.send("Error user already exists");
   }
-  
+  //phone, address, name
+  //user object and db updated, account-type
+  //display info in account if logged 
+  //can view and update 
   usersDb[id] = {id, password, email}
   req.session.user_id = usersDb[id].id;
   return res.redirect('/homepage');
