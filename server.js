@@ -46,6 +46,7 @@ const loginRoutes = require('./routes/login');
 const contactRoutes = require('./routes/contact');
 const menuRoutes = require('./routes/menu');
 const logoutRoutes = require('./routes/logout');
+const accountRoutes = require('./routes/account');
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -59,6 +60,8 @@ app.use('/login', loginRoutes);
 app.use('/contact', contactRoutes);
 app.use('/menu', menuRoutes);
 app.use('/logout', logoutRoutes);
+app.use('/account', accountRoutes);
+
 
 
 // Note: mount other resources here, using the same pattern above
