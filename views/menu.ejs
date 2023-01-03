@@ -1,9 +1,54 @@
-<nav>
-    <div class="topnav">
-      <a class="active" href="/users/homepage">Home</a>
-      <a class="nav-item nav-link-left" href="/users/Menu">Menu</a>
-      <a class="nav-item nav-link-left" href="/users/contact">Contact</a>
-      <a class="nav-tiem nav-link-right" href="/users/login">Login</a>
-      <a class="nav-tiem nav-link-right" href="/users/register">register</a>
-  </nav>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="/styles/menu.css">
+  </head>
+  <body>
+    <div class="home-menu">
+        <div >
+            <a href="">Home menu</a>
+        </div>
+        <div class="home-menu-right">
+            <a href="">logged in as:</a>
+        </div>
+    </div>
+    <div class="container">
+        
+        <div class="form">
+            <div class="contact-info">
+                <h3>Contact Us</h3>
+                <h2>How can we get in touch ?</h2>
+                <p class="text"> Fill up the form in detail.We will reach you quickly. </p>
+                <div class="info">
+                    <div class="social-information"> <i class="fa fa-map-marker"></i>
+                        <p>401 West Georgia #600, Vancouver BC V6B 5A1</p>
+                    </div>
+                    
+                    <div class="pno">
+                        <p>Phone number: +17786365081</p>
+                       
+                    </div>
+                </div>
+                <div class="social-media">
+                    <p>Follow us:</p>
+                    <%- include('partials/_footer') %>
+                </div>
+            </div>
+            <div class="contact-info-form"> <span class="circle one"></span> <span class="circle two"></span>
+                <form action="#" onclick="return false;" autocomplete="off">
+                    <h3 class="title">Contact us</h3>
+                    <div class="social-input-containers"> <input type="text" name="name" class="input" placeholder="Name" /> </div>
+                    <div class="social-input-containers"> <input type="email" name="email" class="input" placeholder="Email" />  </div>
+                    <div class="social-input-containers"> <input type="email" name="email" class="input" placeholder="phone" />  </div>
+                    
+                    <div class="social-input-containers"> <input type="tel" name="subject" class="input" placeholder="subject" />  </div>
+                    <div class="social-input-containers textarea"> <textarea name="message" class="input" placeholder="Message"></textarea> </div> <input type="submit" value="Send" class="btn" />
+                </form>
+            </div>
+        </div>
+    </div>
 
+  </body>
+</html>

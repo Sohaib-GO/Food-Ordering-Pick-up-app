@@ -29,6 +29,7 @@ const genRandomString = () => {
   return (Math.random() + 1).toString(36).substring(6);
 };
 
+
 // USER DATABSAE
 const users = {
   userRandomID: {
@@ -44,8 +45,14 @@ const users = {
   },
 };
 
-router.get("/", (req, res) => {
-  return res.render("users");
+
+
+
+
+
+
+router.get('/', (req, res) => {
+  return res.render('users');
 });
 
 
@@ -119,6 +126,5 @@ router.post("/logout", (req, res) => {
   console.log("line 63");
   return res.redirect("/users/homepage");
 });
-
 
 module.exports = router;
