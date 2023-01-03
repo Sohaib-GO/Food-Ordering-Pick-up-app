@@ -1,5 +1,13 @@
+const cookieSession = require('cookie-session');
 const express = require('express');
 const router = express.Router();
+const usersDb = require("../db/queries/hard-db");
+
+
+router.use(cookieSession({
+  name: 'session',
+  keys: ['supersecretkey'],
+}));
 
 // CHECKS FOR EMAIL IN USER DATABASE & RETURNS USER MATCHING OBJ
 const getUserByEmail = (email, database) => {
@@ -15,7 +23,8 @@ const getUserByEmail = (email, database) => {
     return (Math.random() + 1).toString(36).substring(6);
   };
 
-router.post('/register', (req, res) => {
+
+router.post('/', (req, res) => {
   const email = req.body.email;
   const password = req.body.password;
   const id = genRandomString();
@@ -24,23 +33,24 @@ router.post('/register', (req, res) => {
     return res.send("Status Code 400 empty email or password box");
   }
  
-  if (getUserByEmail(email, users)) {
+  if (getUserByEmail(email, usersDb)) {
     return res.send("Error user already exists");
   }
   
-  users[id] = {id, password, email}
-  req.session.user_id = users[id].id;
-  return res.redirect('/users/homepage');
+  usersDb[id] = {id, password, email}
+  req.session.user_id = usersDb[id].id;
+  return res.redirect('/homepage');
 });
 
-router.get('/register', (req, res) => {
+router.get('/', (req, res) => {
   const userId = req.session.user_id;
   const templateVars = {username: userId}
 
   if (userId) {
-    return res.redirect("/users/homepage")
+    return res.redirect("/homepage")
   }
     return res.render('register', templateVars);
 });
+
 
 module.exports = router;

@@ -5,5 +5,5 @@ CREATE TABLE menus (
   food_description VARCHAR(255) NOT NULL,
   price SMALLINT NOT NULL,
   food_category VARCHAR(255) NOT NULL,
-  image_url VARCHAR NOT NULL
+  image_url VARCHAR(555) NOT NULL
 );
