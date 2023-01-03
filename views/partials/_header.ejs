@@ -1,20 +1,20 @@
 <header>
   <nav>
     <% if (username) { %>
-        <a class="active" href="/users/homepage">Home</a>
-        <a class="nav-item nav-link-left" href="/users/Menu">Menu</a>
-        <a class="nav-item nav-link-left" href="/users/contact">Contact</a>
+        <a class="active" href="/homepage">Home</a>
+        <a class="nav-item nav-link-left" href="/Menu">Menu</a>
+        <a class="nav-item nav-link-left" href="/contact">Contact</a>
         <h5>Logged in as: <%= username.email %></h5>
-        <form action="/users/logout" method="POST">
+        <form action="/logout" method="POST">
         <button type="submit" class="logout-btn">logout</button>
         </form>
     <% } else {%>
         <div class="topnav">
             <a class="active" href="/users/homepage">Home</a>
-            <a class="nav-item nav-link-left" href="/users/Menu">Menu</a>
-            <a class="nav-item nav-link-left" href="/users/contact">Contact</a>
-            <a class="nav-tiem nav-link-right" href="/users/login">Login</a>
-            <a class="nav-tiem nav-link-right" href="/users/register">register</a>
+            <a class="nav-item nav-link-left" href="/menu">Menu</a>
+            <a class="nav-item nav-link-left" href="/contact">Contact</a>
+            <a class="nav-tiem nav-link-right" href="/login">Login</a>
+            <a class="nav-tiem nav-link-right" href="/register">register</a>
             <% } %>
         </div>
   </nav>

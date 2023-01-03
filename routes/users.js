@@ -29,7 +29,7 @@ const genRandomString = () => {
 
 
 // USER DATABSAE
-const users = {
+const usersDb = {
   userRandomID: {
     id: "userRandomID",
     email: "user@example.com",
@@ -47,10 +47,10 @@ router.get('/', (req, res) => {
   return res.render('users');
 });
 
-router.get('/homepage', (req, res) => {
+router.get('/register', (req, res) => {
   const user_id = req.session.user_id;
 
-    const username = users[user_id];
+    const username = usersDb[user_id];
 
     const templateVars = {
       username
@@ -59,37 +59,39 @@ router.get('/homepage', (req, res) => {
     return res.render('homepage', templateVars);
 });
 
-router.get('/menu', (req, res) => {
+router.get('/', (req, res) => {
   return res.render('menu');
 });
 
-router.post('/register', (req, res) => {
-  const email = req.body.email;
-  const password = req.body.password;
-  const id = genRandomString();
 
-  if(!email || !password) {
-    return res.send("Status Code 400 empty email or password box");
-  }
+
+// router.post('/register', (req, res) => {
+//   const email = req.body.email;
+//   const password = req.body.password;
+//   const id = genRandomString();
+
+//   if(!email || !password) {
+//     return res.send("Status Code 400 empty email or password box");
+//   }
  
-  if (getUserByEmail(email, users)) {
-    return res.send("Error user already exists");
-  }
+//   if (getUserByEmail(email, users)) {
+//     return res.send("Error user already exists");
+//   }
   
-  users[id] = {id, password, email}
-  req.session.user_id = users[id].id;
-  return res.redirect('/users/homepage');
-});
+//   users[id] = {id, password, email}
+//   req.session.user_id = users[id].id;
+//   return res.redirect('/users/homepage');
+// });
 
-router.get('/register', (req, res) => {
-  const userId = req.session.user_id;
-  const templateVars = {username: userId}
+// router.get('/register', (req, res) => {
+//   const userId = req.session.user_id;
+//   const templateVars = {username: userId}
 
-  if (userId) {
-    return res.redirect("/users/homepage")
-  }
-    return res.render('register', templateVars);
-});
+//   if (userId) {
+//     return res.redirect("/users/homepage")
+//   }
+//     return res.render('register', templateVars);
+// });
 
 
 // LOGIN POST ROUTE
@@ -103,20 +105,19 @@ router.get('/login', (req, res) => {
 
 router.post('/login', (req, res) => {
   const email = req.body.email;
-  const user = getUserByEmail(email, users);
+  const user = getUserByEmail(email, usersDb);
 
   if (user) {
     const password = req.body.password;
     req.session.user_id = user.id;
-    return res.redirect('/users/homepage');
+    return res.redirect('/homepage');
   }
   return res.send("error account does not exist");
 });
 
 router.post('/logout', (req, res) => {
   req.session = null;
-  console.log('line 63')
-  return res.redirect("/users/homepage");
+  return res.redirect("/homepage");
 });
 
 
