@@ -9,8 +9,6 @@ $(".register_form").submit(function (event) {
   const phoneNumber = $("input[name='phone_number']").val();
   const password = $("input[name='password']").val();
 
-  console.log({ name, email, address, phoneNumber, password });
-
   $.ajax({
     type: "POST",
     url: "/register",
@@ -25,11 +23,7 @@ $(".register_form").submit(function (event) {
       window.location.replace("/homepage");
     },
     error: function (error) {
-      if (error.responseText === "User already exists") {
-        alert("This user already exists. Please choose a different email.");
-      } else {
-        alert("Error: " + error.responseText);
-      }
+      alert("Error: " + error.responseText);
     },
   });
 });
