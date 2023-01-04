@@ -10,16 +10,54 @@
   <link rel="stylesheet" href="/styles/register.css">
 </head>
 <body>
-  <div class="right-div" >
+  <div>
+      <%- include('partials/_header') %>
+  </div>
+  <div >
+    <div >
     <div class="right-side">
       <h1>Register Form</h1>
-        <form class="register_button" action="/register" method="POST">
-        <label for="email">email</label>
-        <input class="email_textbox" type="email" name="email" placeholder="email">
-          <label for="password">password</label>
-          <input class="form-control" type="password" name="password" placeholder="password"/>
-          <button type="submit" class="btn btn-primary">register</button>
-        </form>
-    </main>
+      <div class="inp-1" >
+        <p>First Name</p>
+        <input type="text">
+        <p>Last Name</p>
+        <input type="text">
+      </div>
+        <p>Your Email</p>
+        <input type="text">
+        <p>Address</p>
+        <input type="text">
+        <p>Phone Number</p>
+        <input type="text">
+
+    <div class="input-2" >
+      <p>Password</p>
+      <input type="text">
+      <p>Confirm Pasword</p>
+      <input type="text">
+      
+    </div>
+    <button class="register">
+      <p>Register</p>
+      </button>
+ 
+        
+
+    </div>
+    <div class="left-side">
+      <div class="left-side-text">
+        <p>have an account already ?</p>
+        <p>click here to sign in</p>
+        <button class="here">
+          <p>here</p>
+          
+        </button>
+      </div>
+   
+    </div>
+      
+  </div>
+
 </body>
+
 </html>
