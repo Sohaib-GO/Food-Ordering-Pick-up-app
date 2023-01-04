@@ -9,7 +9,6 @@ const express = require("express");
 const router = express.Router();
 const userQueries = require("../db/queries/users");
 const menuQueries = require("../db/queries/search_menu");
-
 router.get("/", (req, res) => {
   userQueries
     .getUsers()
@@ -21,7 +20,7 @@ router.get("/", (req, res) => {
     });
 });
 
-router.get("/search", (req, res) => {
+router.get("/search", (req, res) => { // search menu items by name
   menuQueries
     .searchMenu(req.query.search)
     .then((items) => {
@@ -30,6 +29,25 @@ router.get("/search", (req, res) => {
     .catch((err) => {
       res.status(500).json({ error: err.message });
     });
+});
+
+router.post("/orders/add", async (req, res) => { // add menu item to order
+  try {
+    const userId = req.session.user_id;
+    const menuId = req.body.menuId;
+    const quantity = req.body.quantity;
+    const instruction = req.body.instruction;
+    const total = req.body.total;
+
+    const newOrder = await userQueries.addMenuOrder(userId, menuId, quantity, instruction, total);
+    res.json({
+      message: "Successfully added menu to order.",
+      order: newOrder,
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Error adding menu to order." });
+  }
 });
 
 
