@@ -6,12 +6,16 @@ const usersDb = {
       id: "userRandomID",
       email: "user@example.com",
       password: "123",
+      name: 'test',
+      phone_number: '123',
     },
   
     user2RandomID: {
       id: "user2RandomID",
       email: "user2@example.com",
       password: "321",
+      name: 'test',
+      phone_number: '321',
     }
   };
 
