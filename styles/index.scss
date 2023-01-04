@@ -295,4 +295,26 @@ width: 50%;
   .nav{
     display: flex;
   }
+  
+  @media all and (max-width:350px){
+    .main {
+      display: flex;
+      flex-direction: column;
+      padding: 3rem;
+      padding-left: 115px;
+    }
+
+  }
+    
+  @media all and (max-width:750px){
+    .main {
+      display: flex;
+      flex-direction: column;
+      padding: 3rem;
+      padding-left: 115px;
+    }
+
+  }
+
+
 
