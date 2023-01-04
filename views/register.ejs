@@ -17,29 +17,28 @@
     <div >
     <div class="right-side">
       <h1>Register Form</h1>
-      <div class="inp-1" >
-        <p>First Name</p>
-        <input type="text">
-        <p>Last Name</p>
-        <input type="text">
-      </div>
+      <form class="register_form" action="/register" method="POST">
+        <div class="inp-1" >
+          <p>Full Name</p>
+          <input type="text" name="name">
+        </div>
         <p>Your Email</p>
-        <input type="text">
+        <input type="email" name="email">
         <p>Address</p>
-        <input type="text">
+        <input type="text" name="address">
         <p>Phone Number</p>
-        <input type="text">
-
-    <div class="input-2" >
-      <p>Password</p>
-      <input type="text">
-      <p>Confirm Pasword</p>
-      <input type="text">
-      
+        <input type="number" name="phone_number">
+        <div class="input-2" >
+          <p>Password</p>
+          <input type="text" name="password">
+          <p>Account Type</p>
+          <input type="text" name="account_type">
+          <button type="submit" class="register">
+            <p>Register</p>
+          </button>
+      </form>
     </div>
-    <button class="register">
-      <p>Register</p>
-      </button>
+   
  
         
 
