@@ -18,10 +18,11 @@
     <h1 class='company'>Login</h1>
     </div>
     <div class='form'>
-      <form>
-    <input type="text" placeholder='Username' class='text' id='username' required><br>
-    <input type="password" placeholder='Password' class='password'><br>
-    <a class='btn-login' i>Login</a>
+      <form action="/login" method="POST">
+    <input type="text" placeholder='Username' class='text' id='username' name="email" required><br>
+    <input type="password" placeholder='Password' class='password' name="password"><br>
+    <a class='btn-login' type="submit" i>Login</a>
+    <button type="submit">Login2</button>
       </form>
     </div>
     <%- include('partials/_footer') %>
