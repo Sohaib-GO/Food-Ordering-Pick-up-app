@@ -12,7 +12,6 @@
   <header>
     <%- include('partials/_header') %>
   </header>
-
   <section class='login' id='login'>
     <div class='head'>
     <h1 class='company'>Login</h1>
@@ -21,16 +20,11 @@
       <form action="/login" method="POST">
     <input type="text" placeholder='Username' class='text' id='username' name="email" required><br>
     <input type="password" placeholder='Password' class='password' name="password"><br>
-    <a class='btn-login' type="submit" i>Login</a>
-    <button type="submit">Login2</button>
+    <button class='btn-login' type="submit">Login</button>
       </form>
     </div>
     <%- include('partials/_footer') %>
   </section>
-  
-
- 
-
 
 </body>
 </html>
