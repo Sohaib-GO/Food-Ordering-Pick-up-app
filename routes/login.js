@@ -31,15 +31,11 @@ router.get('/', (req, res) => {
     const email = req.body.email;
     const user = getUserByEmail(email, usersDb);
     
-
-    // if (account_type === admin) {
-    //   return res.redirect('/admin')
-    // }
-    if (user) {
+    if (!user) {
       const password = req.body.password;
       if (password === user.password) {
-      req.session.user_id = user.id;
-      return res.redirect("/homepage");
+    req.session.user_id = user.id;
+    return res.redirect("/homepage");
     } else {
       return res.send("Error: incorrect password");
     }
