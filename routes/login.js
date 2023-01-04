@@ -10,34 +10,20 @@ router.use(
   })
 );
 
-const getUserByEmail = (email, database) => {
-    for (let id in database) {
-      if (email === database[id].email) {
-        return database[id];
-      }
-    }
-    return null;
-  };
+router.get("/", (req, res) => {
+  const userId = req.session.user_id;
+  const templateVars = { username: userId };
 
-router.get('/', (req, res) => {
-    const userId = req.session.user_id;
-    const templateVars = {username: userId}
-  
-    return res.render('login', templateVars);
-  });
-  
-  
-  router.post('/', (req, res) => {
-    const email = req.body.email;
-    const user = getUserByEmail(email, usersDb);
-    
+  return res.render("login", templateVars);
+});
 
-    // if (account_type === admin) {
-    //   return res.redirect('/admin')
-    // }
-    if (user) {
-      const password = req.body.password;
-      if (password === user.password) {
+router.post("/", async(req, res) => {
+  const email = req.body.email;
+  const user = await userQueries.getUserByEmail(email);
+
+  if (user) {
+    const password = req.body.password;
+    if (password === user.password) {
       req.session.user_id = user.id;
       return res.redirect("/homepage");
     } else {
