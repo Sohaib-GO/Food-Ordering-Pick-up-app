@@ -1,58 +1,57 @@
-const cookieSession = require('cookie-session');
-const express = require('express');
+const cookieSession = require("cookie-session");
+const express = require("express");
 const router = express.Router();
-const usersDb = require("../db/queries/hard-db");
+const userQueries = require("../db/queries/users");
+
+router.use(
+  cookieSession({
+    name: "session",
+    keys: ["supersecretkey"],
+  })
+);
 
 
-router.use(cookieSession({
-  name: 'session',
-  keys: ['supersecretkey'],
-}));
 
-// CHECKS FOR EMAIL IN USER DATABASE & RETURNS USER MATCHING OBJ
-const getUserByEmail = (email, database) => {
-    for (let id in database) {
-      if (email === database[id].email) {
-        return database[id];
-      }
-    }
-    return null;
-  };
-  
-  const genRandomString = () => {
-    return (Math.random() + 1).toString(36).substring(6);
-  };
-
-
-router.post('/', (req, res) => {
+router.post("/", async (req, res) => {
+  const name = req.body.name;
   const email = req.body.email;
   const password = req.body.password;
-  const id = genRandomString();
-  const name = req.body.name;
-  const phone_number = req.body.phone_number;
+  const phoneNumber = req.body.phoneNumber;
+  const accountType = req.body.accountType;
+  const address = req.body.address;
 
-  if(!email || !password) {
-    return res.send("Status Code 400 empty email or password box");
+  if (!name || !email || !password || !phoneNumber || !address)) {
+    return res.status(400).send("Missing required fields");
   }
- 
-  if (getUserByEmail(email, usersDb)) {
-    return res.send("Error user already exists");
-  }
-  
-  usersDb[id] = {id, password, email, name, phone_number};
-  req.session.user_id = usersDb[id].id;
-  return res.redirect('/homepage');
-});
 
-router.get('/', (req, res) => {
+  try {
+    const user = await userQueries.getUserByEmail(email);
+    if (user) {
+      return res.status(400).send("User already exists");
+    }
+    const newUser = await userQueries.addUser(
+      name,
+      email,
+      password,
+      phoneNumber,
+      accountType
+    );
+    req.session.userId = newUser.id;
+    return res.status(201).send(newUser);
+  } catch (error) {
+    console.error(error);
+    return res.status(500).send(error);
+  }
+
+
+router.get("/", (req, res) => {
   const userId = req.session.user_id;
-  const templateVars = {username: userId}
+  const templateVars = { username: userId };
 
   if (userId) {
-    return res.redirect("/homepage")
+    return res.redirect("/homepage");
   }
-    return res.render('register', templateVars);
+  return res.render("register", templateVars);
 });
-
 
 module.exports = router;
