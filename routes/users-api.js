@@ -9,7 +9,6 @@ const express = require("express");
 const router = express.Router();
 const userQueries = require("../db/queries/users");
 const menuQueries = require("../db/queries/search_menu");
-
 router.get("/", (req, res) => {
   userQueries
     .getUsers()
@@ -21,7 +20,7 @@ router.get("/", (req, res) => {
     });
 });
 
-router.get("/search", (req, res) => {
+router.get("/search", (req, res) => { // search menu items by name
   menuQueries
     .searchMenu(req.query.search)
     .then((items) => {
@@ -31,6 +30,8 @@ router.get("/search", (req, res) => {
       res.status(500).json({ error: err.message });
     });
 });
+
+
 
 
 module.exports = router;
