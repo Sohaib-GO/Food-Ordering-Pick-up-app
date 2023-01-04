@@ -9,8 +9,6 @@ $(".register_form").submit(function (event) {
   const phoneNumber = $("input[name='phone_number']").val();
   const password = $("input[name='password']").val();
 
-  console.log({ name, email, address, phoneNumber, password });
-
   $.ajax({
     type: "POST",
     url: "/register",
@@ -22,11 +20,10 @@ $(".register_form").submit(function (event) {
       password: password,
     },
     success: function (data) {
-      console.log(data);
       window.location.replace("/homepage");
     },
     error: function (error) {
-      console.log(error);
+      alert("Error: " + error.responseText);
     },
   });
 });
