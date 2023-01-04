@@ -20,7 +20,6 @@ router.post("/", async (req, res) => {
   if (!name || !email || !password || !phoneNumber || !address) {
     return res.status(400).send("Missing required fields");
   }
-
   try {
     const user = await userQueries.getUserByEmail(email);
     if (user) {

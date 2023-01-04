@@ -22,11 +22,14 @@ $(".register_form").submit(function (event) {
       password: password,
     },
     success: function (data) {
-      console.log(data);
       window.location.replace("/homepage");
     },
     error: function (error) {
-      console.log(error);
+      if (error.responseText === "User already exists") {
+        alert("This user already exists. Please choose a different email.");
+      } else {
+        alert("Error: " + error.responseText);
+      }
     },
   });
 });
