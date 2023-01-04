@@ -1,12 +1,14 @@
-const cookieSession = require('cookie-session');
-const express = require('express');
+const cookieSession = require("cookie-session");
+const express = require("express");
 const router = express.Router();
-const usersDb = require("../db/queries/hard-db");
+const userQueries = require("../db/queries/users");
 
-router.use(cookieSession({
-    name: 'session',
-    keys: ['supersecretkey'],
-  }));
+router.use(
+  cookieSession({
+    name: "session",
+    keys: ["supersecretkey"],
+  })
+);
 
 const getUserByEmail = (email, database) => {
     for (let id in database) {
@@ -30,16 +32,19 @@ router.get('/', (req, res) => {
     const user = getUserByEmail(email, usersDb);
     
 
-    if (email === 'user@example.com') {
-      return res.redirect('/admin')
-    }
+    // if (account_type === admin) {
+    //   return res.redirect('/admin')
+    // }
     if (user) {
       const password = req.body.password;
+      if (password === user.password) {
       req.session.user_id = user.id;
-      return res.redirect('/homepage');
+      return res.redirect("/homepage");
+    } else {
+      return res.send("Error: incorrect password");
     }
-    return res.send("error account does not exist");
-  });
-  
+  }
+  return res.send("Error: user not found");
+});
 
-  module.exports = router;
+module.exports = router;
