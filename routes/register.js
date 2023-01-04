@@ -10,17 +10,14 @@ router.use(
   })
 );
 
-
-
 router.post("/", async (req, res) => {
   const name = req.body.name;
   const email = req.body.email;
   const password = req.body.password;
   const phoneNumber = req.body.phoneNumber;
-  const accountType = req.body.accountType;
   const address = req.body.address;
 
-  if (!name || !email || !password || !phoneNumber || !address)) {
+  if (!name || !email || !password || !phoneNumber || !address) {
     return res.status(400).send("Missing required fields");
   }
 
@@ -34,7 +31,8 @@ router.post("/", async (req, res) => {
       email,
       password,
       phoneNumber,
-      accountType
+      
+      address
     );
     req.session.userId = newUser.id;
     return res.status(201).send(newUser);
@@ -42,7 +40,7 @@ router.post("/", async (req, res) => {
     console.error(error);
     return res.status(500).send(error);
   }
-
+});
 
 router.get("/", (req, res) => {
   const userId = req.session.user_id;

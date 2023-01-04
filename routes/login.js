@@ -10,8 +10,6 @@ router.use(
   })
 );
 
-
-
 router.get("/", (req, res) => {
   const userId = req.session.user_id;
   const templateVars = { username: userId };

@@ -20,11 +20,11 @@ const addMenuOrder = async(userId, menuId, quantity, instruction, total) => {
 };
 
 // add new user to database
-const addUser = async(name, email, password, phoneNumber, accountType) => {
+const addUser = async(name, email, password, phoneNumber, address, accountType) => {
   try {
     const result = await db.query(
-      "INSERT INTO users (name, email, password, phone_number, account_type) VALUES ($1, $2, $3, $4, $5) RETURNING *",
-      [name, email, password, phoneNumber, accountType]
+      "INSERT INTO users (name, email, password, phone_number,address, account_type) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *",
+      [name, email, password, phoneNumber, address, accountType]
     );
     return result.rows[0];
   } catch (error) {
