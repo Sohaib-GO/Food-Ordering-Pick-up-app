@@ -13,8 +13,9 @@
   <div class="right-div" >
     <div class="right-side">
       <h1>Register Form</h1>
-        <p>First Name</p>
-        <input type="text">
+        <form class="register_button" action="/register" method="POST">
+        <label for="email">email</label>
+        <input class="email_textbox" type="email" name="email" placeholder="email">
           <label for="password">password</label>
           <input class="form-control" type="password" name="password" placeholder="password"/>
           <button type="submit" class="btn btn-primary">register</button>

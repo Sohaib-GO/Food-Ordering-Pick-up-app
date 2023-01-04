@@ -28,7 +28,11 @@ router.get('/', (req, res) => {
   router.post('/', (req, res) => {
     const email = req.body.email;
     const user = getUserByEmail(email, usersDb);
-  
+    
+
+    if (account_type === admin) {
+      return res.redirect('/admin')
+    }
     if (user) {
       const password = req.body.password;
       req.session.user_id = user.id;
