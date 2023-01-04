@@ -30,9 +30,9 @@ router.get('/', (req, res) => {
     const user = getUserByEmail(email, usersDb);
     
 
-    // if (account_type === admin) {
-    //   return res.redirect('/admin')
-    // }
+    if (email === 'user@example.com') {
+      return res.redirect('/admin')
+    }
     if (user) {
       const password = req.body.password;
       req.session.user_id = user.id;

@@ -19,21 +19,20 @@
       <h1>Register Form</h1>
       <form class="register_form" action="/register" method="POST">
         <div class="inp-1" >
-          <p>Full Name</p>
-          <input type="text" name="name">
         </div>
+        <p>Full Name</p>
+        <input type="text" name="name">
         <p>Your Email</p>
-        <input type="email" name="email">
+        <input type="email" name="email" size="50">
         <p>Address</p>
-        <input type="text" name="address">
+        <input type="text" name="address" size="50">
         <p>Phone Number</p>
-        <input type="number" name="phone_number">
-        <div class="input-2" >
-          <p>Password</p>
-          <input type="text" name="password">
-          <button type="submit" class="register">
-            <p>Register</p>
-          </button>
+        <input type="text" name="phone_number" size="50">
+        <p>Password</p>
+        <input type="text" name="password">
+        <button type="submit" class="register">
+        <p>Register</p>
+        </button>
       </form>
     </div>
    
@@ -41,16 +40,17 @@
         
 
     </div>
-    <div class="left-side">
-      <div class="left-side-text">
-        <p>have an account already ?</p>
-        <p>click here to sign in</p>
-        <button class="here">
-          <p>here</p>
-          
-        </button>
-      </div>
-   
+    <form class="sign-in_redirct" action="/login" action="POST">
+      <div class="left-side">
+        <div class="left-side-text">
+          <p>have an account already ?</p>
+          <p>click here to sign in</p>
+          <button class="here">
+            <p>here</p>
+          </button>
+    </form>
+  </div>
+  
     </div>
       
   </div>
