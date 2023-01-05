@@ -2,20 +2,6 @@ const express = require("express");
 const router = express.Router();
 const userQueries = require("../db/queries/users");
 
-// router.get("/", async (req, res) => {
-//   const userId = req.session.user_id;
-
-//   if (!userId) {
-//     // User is not logged in, render homepage with "Guest" as the username
-//     const templateVars = { username: "Guest" };
-//     return res.render("account", templateVars);
-//   }
-
-//   const user = await userQueries.getUserById(userId);
-//   const templateVars = { username: user.name };
-
-//   return res.render("account", templateVars);
-// });
 
 router.get("/", async (req, res) => {
   const userId = req.session.user_id;
