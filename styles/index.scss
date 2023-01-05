@@ -17,7 +17,7 @@ body * {
     border-radius: 25px;
   }
   .category-img {
-    background-color: #FACC14 !important;
+    background-color: #ffffff !important;
   }
   .custom-tr-rounded {
     border-radius:  0 25px 0 0;
@@ -230,11 +230,11 @@ body * {
   }
   
   .navigation-list{
-    width: 80%;
+    width: 50%;
     height: 3rem;
     padding: 30px;
     border-radius: 10px;
-    background-color: #FACC14;
+    background-color: #ffffff;
     list-style-type: none;
     display: flex;
     align-items:center;
@@ -251,12 +251,9 @@ body * {
     padding: 5px 10px;
     font-size: 14px;
     cursor: pointer;
-margin-right: 5rem;
-
   }
   .navigation-list input {
-border-radius: 5px;
-width: 50%;
+  border-radius: 5px;
   }
   .navigation-list li{
   

@@ -1,4 +1,15 @@
 <!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <%- include('partials/_header') %>
+    <link rel="stylesheet" href="/styles/menu.css">
+  </head>
+  <body>        
+  </body>
+</html>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -18,12 +29,11 @@
   <title>Home Page</title>
 </head>
 <body>
-
   <div class="flex main" >
     <div class="main px-16 border-r border-gray-200">
       <p class="logo">Continental</p>
       <img class="logoPic"  src="https://library.kissclipart.com/20181207/gwe/kissclipart-surfrider-ocean-friendly-restaurants-clipart-cafe-92d444e9e8975ffd.jpg" alt="">
-      <p class="ulogo">Food, Folks and Fun all together </p> 
+      <p class="ulogo">We're better than Delissio</p> 
       
       
       <div class="grid grid-cols-3 bg-orange-100 mt-12 rounded-lg ">
@@ -40,7 +50,6 @@
       </div>
       <div class="flex mt-12 items-end">
         <h3 class="text-xl font-bold">Menu</h3>
-        <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/237/hamburger_1f354.png" class="mx-4 h-8 w-8" alt="">
         <button class="ml-auto rounded-full p-2 bg-orange-600 hover:bg-orange-500 hover:shadow-lg text-white cursor-pointer text-sm">
           <i class="fa fa-clock mx-2"></i>
           <span class="font-hairline">Delivery: </span><span>Now</span>
@@ -48,11 +57,41 @@
         </button>
       </div>
       <div class="grid grid-cols-9 gap-6 mt-12">
-        <div   class=" border rounded-full  flex flex-col items-center shadow-xl cursor-pointer  category-img">
+        <div class=" border rounded-full  flex flex-col items-center shadow-xl cursor-pointer  category-img">
           <div class="border rounded-full p-2 bg-white ">
-            <img class="h-12 w-12 " src="https://firebasestorage.googleapis.com/v0/b/cajaregistradora-776cc.appspot.com/o/pngwing.com(2).png?alt=media&token=bde13cf8-4b17-4da9-90cf-c16db83b2e1f">
+            <img class="h-12 w-12 " src="/images/food_icon/specials.png">
           </div>
-          <p class="mt-3 mb-10 font-bold  text-xs">{{category}}</p>
+          <p class="mt-3 mb-10 font-bold  text-xs">Specials</p>
+        </div>
+        <div class=" border rounded-full  flex flex-col items-center shadow-xl cursor-pointer  category-img">
+          <div class="border rounded-full p-2 bg-white ">
+            <img class="h-12 w-12 " src="/images/food_icon/appetizer.png">
+          </div>
+          <p class="mt-3 mb-10 font-bold  text-xs">Appetizer</p>
+        </div>
+        <div class=" border rounded-full  flex flex-col items-center shadow-xl cursor-pointer  category-img">
+          <div class="border rounded-full p-2 bg-white ">
+            <img class="h-12 w-12 " src="/images/food_icon/main.png">
+          </div>
+          <p class="mt-3 mb-10 font-bold  text-xs">Mains</p>
+        </div>
+        <div class=" border rounded-full  flex flex-col items-center shadow-xl cursor-pointer  category-img">
+          <div class="border rounded-full p-2 bg-white ">
+            <img class="h-12 w-12 " src="/images/food_icon/sides.png">
+          </div>
+          <p class="mt-3 mb-10 font-bold  text-xs">Sides</p>
+        </div>
+        <div class=" border rounded-full  flex flex-col items-center shadow-xl cursor-pointer  category-img">
+          <div class="border rounded-full p-2 bg-white ">
+            <img class="h-12 w-12 " src="/images/food_icon/beverages.png">
+          </div>
+          <p class="mt-3 mb-10 font-bold  text-xs">Beverages</p>
+        </div>
+        <div class=" border rounded-full  flex flex-col items-center shadow-xl cursor-pointer  category-img">
+          <div class="border rounded-full p-2 bg-white ">
+            <img class="h-12 w-12 " src="/images/food_icon/dessert.png">
+          </div>
+          <p class="mt-3 mb-10 font-bold  text-xs">Desserts</p>
         </div>
       </div>
       <div class="fav-food">
@@ -72,8 +111,6 @@
     </div>
     <div class="bg-gray-100 sidebar  ">
       <header class="nav">
-          
-          
           <li >
             <a class="navItems m-1" href="/login">Login</a>
           </li>
@@ -83,10 +120,6 @@
           <li>
             <a class="navItems m-1" href="/contact"target="_blank">Contact</a>
           </li> 
-          
-          
-       
-   
     </header> 
        <div class="px-6">
 

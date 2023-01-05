@@ -7,9 +7,7 @@ router.get('/', (req, res) => {
     const username = usersDb[user_id];
     const templateVars = {username, usersDb, user_id};
     
-    if(!username) {
-        res.redirect('/homepage');
-    }
+
     
     return res.render('account', templateVars);
 });
