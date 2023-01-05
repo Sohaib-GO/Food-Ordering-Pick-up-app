@@ -6,9 +6,14 @@ router.get("/", (req, res) => {
   return res.render("admin");
 });
 
-
-router.get("/orders", (req, res) => {
-  res.render("orders");
+router.get("/orders", async (req, res) => {
+  try {
+    const orders = await adminQueries.getPendingOrders();
+    res.render("orders", { orders: orders }); // pass orders as an object to the template
+  } catch (error) {
+    console.error(error);
+    res.sendStatus(500);
+  }
 });
 
 

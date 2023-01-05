@@ -67,19 +67,6 @@ const deleteMenuItem = async (id) => {
 };
 
 
-const updateOrderReadyAt = async (orderId, readyAt) => {
-  try {
-    await db.query(
-      `UPDATE orders
-       SET ready_at = current_timestamp + interval $1 minute
-       WHERE id = $2`,
-      [readyAt, orderId]
-    );
-  } catch (error) {
-    console.error(error);
-    throw error;
-  }
-};
 
 // Returns a promise that resolves to an object where the keys are user IDs and the values are arrays of orders made by that user
 const fetchOrdersByUserId = async (userId) => {
@@ -96,22 +83,17 @@ const fetchOrdersByUserId = async (userId) => {
   return orders;
 };
 
-const confirmOrder = async (orderId, waitTime) => {
-  const res = await db.query(
-    `
-  UPDATE orders SET order_status = 'confirmed', ready_at = NOW() + INTERVAL $1 MINUTE WHERE id = $2 RETURNING *`,
-    [waitTime, orderId]
-  );
-  return res.rows[0];
-};
 
-const updateOrderReady = async (orderId) => {
-  const res = await db.query(
-    `
-  UPDATE orders SET order_status = 'ready', ready_at = NOW() WHERE id = $1 RETURNING *`,
-    [orderId]
-  );
-  return res.rows[0];
+const updateOrder = async (orderId, orderStatus, readyAt) => {
+  try {
+    await db.query(
+      "UPDATE orders SET order_status = $1, ready_at = $2 WHERE id = $3",
+      [orderStatus, readyAt, orderId]
+    );
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
 };
 
 const getPhoneNumberByOrderID = async (orderId) => {
@@ -130,6 +112,7 @@ const getPendingOrders = async () => {
       FROM orders
       JOIN menus ON menus.id = orders.menu_id
       WHERE order_status = 'pending'
+      GROUP BY orders.id, menus.food_name, menus.price
     `);
     return result.rows;
   } catch (error) {
@@ -137,7 +120,6 @@ const getPendingOrders = async () => {
     throw error;
   }
 };
-
 // get confirmed orders
 const getConfirmedOrders = async () => {
   try {
@@ -157,11 +139,8 @@ module.exports = {
   createMenuItem,
   updateMenuItem,
   deleteMenuItem,
-  updateOrderReadyAt,
-  confirmOrder,
   fetchOrdersByUserId,
-  updateOrderReady,
   getPhoneNumberByOrderID,
   getPendingOrders,
-  getConfirmedOrders
-};
+  getConfirmedOrders,
+  updateOrder,};

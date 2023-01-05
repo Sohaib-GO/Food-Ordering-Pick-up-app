@@ -87,7 +87,22 @@ router.get("/orders", async (req, res) => {
 });
 
 
+// confirm order
 
+router.post("/orders/confirm", async (req, res) => {
+  try {
+    const orderId = req.body.orderId;
+    const waitTime = req.body.waitTime;
+    const readyAt = new Date(Date.now() + waitTime * 60000); // convert wait time from minutes to milliseconds
+
+    await adminQueries.updateOrder(orderId, "confirmed", readyAt);
+
+    res.json({ message: "Successfully confirmed order." });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Error confirming order." });
+  }
+});
 
 
 
