@@ -89,3 +89,47 @@ $(document).on("click", ".update-menu-item-button", function () {
     },
   });
 });
+
+
+
+
+// Load pending orders when the page loads
+$.ajax({
+  url: '/api/admin/orders',
+  method: 'GET',
+  success: function(orders) {
+    for (const order of orders) {
+      const template = $('#pending-order-template').html();
+      const $orderElem = $(template);
+
+      // Set the order ID
+      $orderElem.find('.order-id').text(`Order #${order.id}`);
+
+      // Add the order items
+      const $itemTemplate = $($('#order-item-template').html());
+      console.log($('#order-item-template').html())
+      $orderElem.find('.order-items').append($itemTemplate);
+console.log($itemTemplate.find('.item-name'));
+      // Add the menu item name and quantity to the template
+      $itemTemplate.find('.item-name').text(order.food_name);
+      $itemTemplate.find('.item-price').text(order.price);
+      // Add the confirm order form
+      $orderElem.find('.confirm-order-form').on('submit', function(event) {
+        event.preventDefault();
+        const waitTime = $(this).find('[name="wait-time"]').val();
+        $.ajax({
+          url: '/admin/orders/' + order.id + '/confirm',
+          method: 'POST',
+          data: { waitTime: waitTime },
+          success: function() {
+            // Remove the order from the pending orders list
+            $orderElem.remove();
+          }
+        });
+      });
+
+      // Add the order element to the list of pending orders
+      $('.pending-orders').append($orderElem);
+    }
+  }
+});

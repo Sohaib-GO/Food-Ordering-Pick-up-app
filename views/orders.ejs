@@ -1,0 +1,31 @@
+<!--admin.ejs-->
+<script src="/vendor/jquery-3.0.0.js"></script>
+<script type="module" defer src="/scripts/admin.js"></script>
+
+<div class="admin-pending-orders">
+  <h1>Pending Orders:</h1>
+  <ul class="pending-orders">
+    <!-- Pending orders will be inserted here via AJAX -->
+  </ul>
+</div>
+
+<!-- Template for a single pending order -->
+<template id="pending-order-template">
+  <li class="pending-order">
+    <h2 class="order-id"></h2>
+    <ul class="order-items"></ul>
+    <form class="confirm-order-form">
+      <label for="wait-time">Estimated wait time (minutes):</label>
+      <input type="number" name="wait-time" min="0" required />
+      <input type="submit" value="Confirm Order" />
+    </form>
+  </li>
+</template>
+<!-- Template for a single order item -->
+<template id="order-item-template">
+  <span class="item-name"></span> x <span class="item-quantity"></span>
+  <br />
+  Price: <span class="item-price"></span>
+  <br />
+  Description: <span class="item-description"></span>
+</template>
