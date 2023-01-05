@@ -40,35 +40,5 @@ router.post("/", async (req, res) => {
   }
 });
 
-router.post("/admin/orders", async (req, res) => {
-  try {
-    // when the restaurant cofirms the order, the user will receive a text message
-    const orderId = req.body.orderId;
-    const order = await usersQueries.getOrderById(orderId);
-    const messageBody = `Your order #${order.id} has been confirmed!`;
-    console.log(messageBody);
-
-    client.messages
-      .create({
-        body: messageBody,
-        from: "+17154024150",
-        to: "+17802711491",
-      })
-
-      .then((message) => console.log(message.sid))
-      .catch((err) => console.log(err));
-
-    // Set the success message in the session and redirect to the homepage
-    req.session.successMessage =
-      "Order has been confirmed and text message sent!";
-    res.redirect("/admin/orders");
-  } catch (error) {
-    console.error(error);
-
-    // Set the error message in the session and redirect to the homepage
-    req.session.errorMessage = "Error confirming order";
-    res.redirect("/admin/orders");
-  }
-});
 
 module.exports = router;
