@@ -16,6 +16,7 @@
             <div class="card-body">
               <h3 class="card-subtitle mb-2 text-muted">Order #<%= order.id %></h3>
               <h5 class="card-title"><%= order.food_name %></h5>
+                <p class="card-text">Price: $<%= order.price %></p>
 
               <% if (order.order_status === 'pending') { %>
                 <p>Please wait for restaurant confirmation</p>

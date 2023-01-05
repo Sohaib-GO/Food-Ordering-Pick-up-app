@@ -86,7 +86,7 @@ const getUserByEmail = async (email) => {
 const getOrdersByUserId = async (userId) => {
   try {
     const result = await db.query(
-      `SELECT o.id, m.food_name , o.order_status, o.ready_at FROM orders o
+      `SELECT o.id, m.food_name , o.order_status, o.ready_at, o.price, o.quantity FROM orders o
        JOIN menus m ON m.id = o.menu_id
        WHERE o.user_id = $1 `,
       [userId]
