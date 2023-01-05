@@ -9,3 +9,200 @@
   </body>
 </html>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles/main.css" />
+  <link rel="stylesheet" href="/styles/layout.css"/>
+  <link rel="stylesheet" href="/styles/index.css"/>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <link rel="stylesheet" href="./css.css" /> 
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Rubik+Bubbles&display=swap" rel="stylesheet">
+
+  <title>Home Page</title>
+</head>
+<body>
+  <div class="flex main" >
+    <div class="main px-16 border-r border-gray-200">
+      <p class="logo">Continental</p>
+      <img class="logoPic"  src="https://library.kissclipart.com/20181207/gwe/kissclipart-surfrider-ocean-friendly-restaurants-clipart-cafe-92d444e9e8975ffd.jpg" alt="">
+      <p class="ulogo">We're better than Delissio</p> 
+      
+      
+      <div class="grid grid-cols-3 bg-orange-100 mt-12 rounded-lg ">
+        <div >
+          <img src="/images/food_delivery.jpg" >
+        </div>
+        <div class="row-auto flex flex-col justify-center items-center">
+          <h3 class="tracking-wide text-orange-600 text-lg ml-6">$0 delivery for 30 days!&nbsp;&nbsp;&nbsp;🎉</h3>
+          <h5 class="text-xs text-gray-500">$0 delivery fee for orders over $10 for 30 days</h5>
+        </div>
+        <div class="flex justify-end items-end pb-4 pr-4">
+          <a class="font-hairline text-orange-500" href="">Learn More <i class="ml-3 fa fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="flex mt-12 items-end">
+        <h3 class="text-xl font-bold">Menu</h3>
+        <button class="ml-auto rounded-full p-2 bg-orange-600 hover:bg-orange-500 hover:shadow-lg text-white cursor-pointer text-sm">
+          <i class="fa fa-clock mx-2"></i>
+          <span class="font-hairline">Delivery: </span><span>Now</span>
+          <i class="fa fa-chevron-down mx-2"></i>
+        </button>
+      </div>
+      <div class="grid grid-cols-9 gap-6 mt-12">
+        <div class=" border rounded-full  flex flex-col items-center shadow-xl cursor-pointer  category-img">
+          <div class="border rounded-full p-2 bg-white ">
+            <img class="h-12 w-12 " src="/images/food_icon/specials.png">
+          </div>
+          <p class="mt-3 mb-10 font-bold  text-xs">Specials</p>
+        </div>
+        <div class=" border rounded-full  flex flex-col items-center shadow-xl cursor-pointer  category-img">
+          <div class="border rounded-full p-2 bg-white ">
+            <img class="h-12 w-12 " src="/images/food_icon/appetizer.png">
+          </div>
+          <p class="mt-3 mb-10 font-bold  text-xs">Appetizer</p>
+        </div>
+        <div class=" border rounded-full  flex flex-col items-center shadow-xl cursor-pointer  category-img">
+          <div class="border rounded-full p-2 bg-white ">
+            <img class="h-12 w-12 " src="/images/food_icon/main.png">
+          </div>
+          <p class="mt-3 mb-10 font-bold  text-xs">Mains</p>
+        </div>
+        <div class=" border rounded-full  flex flex-col items-center shadow-xl cursor-pointer  category-img">
+          <div class="border rounded-full p-2 bg-white ">
+            <img class="h-12 w-12 " src="/images/food_icon/sides.png">
+          </div>
+          <p class="mt-3 mb-10 font-bold  text-xs">Sides</p>
+        </div>
+        <div class=" border rounded-full  flex flex-col items-center shadow-xl cursor-pointer  category-img">
+          <div class="border rounded-full p-2 bg-white ">
+            <img class="h-12 w-12 " src="/images/food_icon/beverages.png">
+          </div>
+          <p class="mt-3 mb-10 font-bold  text-xs">Beverages</p>
+        </div>
+        <div class=" border rounded-full  flex flex-col items-center shadow-xl cursor-pointer  category-img">
+          <div class="border rounded-full p-2 bg-white ">
+            <img class="h-12 w-12 " src="/images/food_icon/dessert.png">
+          </div>
+          <p class="mt-3 mb-10 font-bold  text-xs">Desserts</p>
+        </div>
+      </div>
+      <div class="fav-food">
+     
+        <ul class="navigation-list">
+          <ul id="search-results"></ul>
+          <input type="text" id="search-input" name="search" placeholder="Search for a dish" />
+          <button id="search-button">Search</button>
+        </ul>
+    </div>
+
+    <div id="menu-items">
+    
+    </div>
+        
+
+    </div>
+    <div class="bg-gray-100 sidebar  ">
+      <header class="nav">
+          <li >
+            <a class="navItems m-1" href="/login">Login</a>
+          </li>
+          <li>
+            <a class="navItems m-1" href="/register" target="_blank">Register</a>
+          </li>
+          <li>
+            <a class="navItems m-1" href="/contact"target="_blank">Contact</a>
+          </li> 
+    </header> 
+       <div class="px-6">
+
+          <div class="h-12 mt-8 flex justify-center items-center">
+          <i class="fa fa-user"></i>
+          <div class="rounded-lg bg-yellow-400 px-3 font-bold text-xs py-1 ml-6">3</div>
+        </div> 
+        <div class="mt-12">
+          <p class="font-medium text-xl">My Order</p>
+        </div>
+        <div class="mt-12 p-6 bg-purple-800 custom-rounded font-hairline text-xs">
+          <div class="flex justify-between items-center">
+            <p class="text-white">625 St Marks Ave</p>
+            <p class="text-yellow-400 cursor-pointer">Edit</p>
+          </div>
+          <div class="flex items-center mt-4">
+            <div class="rounded-lg px-2 py-1 timer"><i class="fa fa-clock text-yellow-400"></i></div>
+            <p class="text-white mx-3 ">35 min</p>
+            <p class="text-yellow-400 cursor-pointer ml-auto">Choose time</p>
+          </div>
+        </div>
+        <div class="grid grid-cols-4 gap-1 mb-5  m-10" >
+          <div class="col-span-1 inline-flex items-center text-xxs font-semibold ">
+            {{item.quantity}}
+          </div>
+          <div class="col-span-2 inline-flex items-center text-xxs font-semibold">
+            {{item.title}}
+          </div>
+          <div class="col-span-1 inline-flex justify-end items-center text-gray-600 font-hairline text-xs ">
+            {{item.price}}
+          </div>
+        </div>
+        <div class="grid grid-cols-4 gap-1 mb-5">
+          <div class="h-10 rounded-lg bg-orange-200 flex">
+            <i class="fa fa-car m-auto text-orange-500"></i>
+           </div>
+          <div class="col-span-2 grid grid-cols-3 text-xxs font-semibold ">
+            <p class="col-span-2 flex justify-center items-center">Delivery</p>
+            <p class="flex items-center"></p>
+          </div>
+          <div class="flex justify-end items-center text-gray-600 font-hairline text-xs">
+            $0.00
+          </div>
+        </div>
+      </div> 
+      <div class="flex-grow flex flex-col pl-6 justify-end">
+          <div class="flex justify-between items-center border-b-2 pb-2">
+            <span>Total:</span>
+            <span class="text-xl font-medium pr-6">$25.97</span>
+          </div>
+        <div class="flex justify-between pt-4 text-xs font-bold">
+          <div class="flex flex-col">
+            <span>Persons</span>
+            <div class="flex items-center mt-3">
+              <span class="border border-r-0 p-2 rounded-l-lg">-</span>
+              <span class="border-b border-t p-2 ">1</span>
+              <span class="border border-l-0 p-2 rounded-r-lg">+</span>
+            </div>
+            </div>
+          <div class="ml-auto bg-yellow-400 p-6 rounded-l-lg">
+        <a href="./conf.html">Checkout <i class="ml-3 fa fa-arrow-right"></i></a>  
+          </div>
+          <form action="/sms" method="POST">
+            <button id="menu-checkout-btn">
+              checkouttest
+            </button>
+          </form>
+        </div>
+        </div>
+    </div>
+    
+  </div>
+  <div>
+    
+    <button class="btn" type="button" name="button">
+      <a href="" #top="">Top</a>
+    </button>
+  </footer>
+  <script src="/vendor/jquery-3.0.0.js"></script>
+  <script type="module" defer src="/scripts/admin.js"></script>
+  <script  type="module" defer src="/scripts/users.js"></script>
+  </html>
+    
+  </div>
+  <%- include('partials/_footer') %>
+</html>
