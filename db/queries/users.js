@@ -82,10 +82,27 @@ const getUserByEmail = async (email) => {
   }
 };
 
+const getOrdersByUserId = async (userId) => {
+  try {
+    const result = await db.query(
+      `SELECT o.id, m.food_name  FROM orders o
+       JOIN menus m ON m.id = o.menu_id
+       WHERE o.user_id = $1 AND o.order_status = 'pending'`,
+      [userId]
+    );
+    return result.rows;
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+};
+
+
 module.exports = {
   getUsers,
   addMenuOrder,
   addUser,
   getUserById,
   getUserByEmail,
+  getOrdersByUserId,
 };

@@ -96,14 +96,6 @@ const updateOrder = async (orderId, orderStatus, readyAt) => {
   }
 };
 
-const getPhoneNumberByOrderID = async (orderId) => {
-  const res = await db.query(
-    `SELECT phone_number FROM users u INNER JOIN orders o ON u.id = o.user_id WHERE o.id = $1`,
-    [orderId]
-  );
-  return res.rows[0];
-};
-
 // get pending orders
 const getPendingOrders = async () => {
   try {
@@ -132,6 +124,15 @@ const getConfirmedOrders = async () => {
     throw error;
   }
 };
+
+const getPhoneNumberByOrderID = async (orderId) => {
+  const res = await db.query(
+    `SELECT phone_number FROM users u INNER JOIN orders o ON u.id = o.user_id WHERE o.id = $1`,
+    [orderId]
+  );
+  return res.rows[0];
+};
+
 
 
 module.exports = {

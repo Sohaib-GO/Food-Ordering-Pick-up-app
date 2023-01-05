@@ -1,39 +1,74 @@
-require('dotenv');
+require("dotenv");
 const accountSid = process.env.ACace56e4e5f37db9bbc0900521773a3e5;
 const authToken = process.env.d667f6a1f1aeeb898751081b887b08b3;
-const client = require('twilio')(accountSid, authToken);
+const client = require("twilio")(accountSid, authToken);
 const express = require("express");
 const router = express.Router();
-const ordersDb = require('../db/queries/hard_order-db');
-const orderNum = 'userRandomID'
+const usersQueries = require("../db/queries/users");
 
-const getOrderById = (orderNum, ordersDb) => {
-    for (let id in ordersDb) {
-        if (orderNum === ordersDb[id].order_id) {
-            return true; 
-        }
+router.post("/", async (req, res) => {
+  try {
+    // Fetch the order from the database
+    const userId = req.session.user_id;
+    const orders = await usersQueries.getOrdersByUserId(userId);
+    // Send the text message using the order information
+    let messageBody = "";
+    for (const order of orders) {
+      messageBody += `A order has been placed : #${order.id}: ${order.food_name}\n`;
     }
-};
+    console.log(messageBody);
 
-router.post('/', (req, res) => {
-    
-    if (getOrderById) {
-        for (let id in ordersDb) {
-            let test = ordersDb[id].order_id;
-            client.messages.create({  
-                body: test,
-                from: '+17154024150',
-                to: '+16046003716' 
-            })
-        .then(message => console.log(message.sid))
-        .catch(err => console.log(err));
-        }
-    }
-    res.redirect('/homepage');
+    client.messages
+      .create({
+        body: messageBody,
+        from: "+17154024150",
+        to: "+17802711491",
+      })
+
+      .then((message) => console.log(message.sid))
+      .catch((err) => console.log(err));
+
+    // Set the success message in the session and redirect to the homepage
+    req.session.successMessage = "Order has been placed and text message sent!";
+    res.redirect("/homepage");
+  } catch (error) {
+    console.error(error);
+
+    // Set the error message in the session and redirect to the homepage
+    req.session.errorMessage = "Error placing order";
+    res.redirect("/homepage");
+  }
 });
 
+router.post("/admin/orders", async (req, res) => {
+  try {
+    // when the restaurant cofirms the order, the user will receive a text message
+    const orderId = req.body.orderId;
+    const order = await usersQueries.getOrderById(orderId);
+    const messageBody = `Your order #${order.id} has been confirmed!`;
+    console.log(messageBody);
 
-       
+    client.messages
+      .create({
+        body: messageBody,
+        from: "+17154024150",
+        to: "+17802711491",
+      })
 
+      .then((message) => console.log(message.sid))
+      .catch((err) => console.log(err));
+
+    // Set the success message in the session and redirect to the homepage
+    req.session.successMessage =
+      "Order has been confirmed and text message sent!";
+    res.redirect("/admin/orders");
+  } catch (error) {
+    console.error(error);
+
+    // Set the error message in the session and redirect to the homepage
+    req.session.errorMessage = "Error confirming order";
+    res.redirect("/admin/orders");
+  }
+});
 
 module.exports = router;

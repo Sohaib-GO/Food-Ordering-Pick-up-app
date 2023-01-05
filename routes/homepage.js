@@ -7,7 +7,7 @@ router.get("/", async (req, res) => {
 
   if (!userId) {
   // User is not logged in, render homepage with "Guest" as the username
-  const templateVars = {username: userId};
+  const templateVars = {username: "Guest"};
   return res.render("homepage", templateVars);
   }
 
