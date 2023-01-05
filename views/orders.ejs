@@ -1,0 +1,29 @@
+Pending orders 
+
+<% for (let i = 0; i < orders.length; i++) { %>
+  <div id="success-message" style="display:none;">Order confirmed!</div>
+
+  <li class="pending-order">
+    <h2 class="order-id"><%= `Order #${orders[i].id}` %></h2>
+    <ul class="order-items">
+      <li>
+        <span class="item-name"><%= orders[i].food_name %></span> x <span class="item-quantity"><%= orders[i].quantity %></span>
+        <br>
+        Price: <span class="item-price"><%= orders[i].price %></span>
+        <br>
+      </li>
+    </ul>
+    
+    <form class="confirm-order-form">
+      <label for="wait-time">Estimated wait time (minutes):</label>
+      <input type="number" name="wait-time" min="0" required />
+      <input type="submit" value="Confirm Order" />
+
+    </form>
+  </li>
+  <div id="success-message"></div>
+
+<% } %>
+<script src="/vendor/jquery-3.0.0.js"></script>
+<script type="module" defer src="/scripts/admin.js"></script>
+<script  type="module" defer src="/scripts/users.js"></script>

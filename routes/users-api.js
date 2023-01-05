@@ -20,7 +20,8 @@ router.get("/", (req, res) => {
     });
 });
 
-router.get("/search", (req, res) => { // search menu items by name
+router.get("/search", (req, res) => {
+  // search menu items by name
   menuQueries
     .searchMenu(req.query.search)
     .then((items) => {
@@ -31,7 +32,34 @@ router.get("/search", (req, res) => { // search menu items by name
     });
 });
 
+router.post("/orders/add", async (req, res) => {
+  try {
+    const userId = req.session.user_id;
+    const menuId = req.body.menuId;
+    const quantity = req.body.quantity;
+    const instruction = req.body.instruction;
+    const price = req.body.price;
+    const timeOrdered = new Date();
+    const orderStatus = req.body.orderStatus;
+    const readyAt = null;
 
-
-
+    const newOrder = await userQueries.addMenuOrder(
+      userId,
+      menuId,
+      quantity,
+      instruction,
+      price,
+      timeOrdered,
+      orderStatus,
+      readyAt
+    );
+    res.json({
+      message: "Successfully added menu to order.",
+      order: newOrder,
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Error adding menu to order." });
+  }
+});
 module.exports = router;

@@ -6,11 +6,29 @@ const getUsers = () => {
   });
 };
 
-const addMenuOrder = async(userId, menuId, quantity, instruction, total) => {
+const addMenuOrder = async (
+  userId,
+  menuId,
+  quantity,
+  instruction,
+  price,
+  timeOrdered,
+  orderStatus,
+  readyAt
+) => {
   try {
     const result = await db.query(
-      "INSERT INTO orders (user_id, menu_id, quantity, instruction, total) VALUES ($1, $2, $3, $4, $5) RETURNING *",
-      [userId, menuId, quantity, instruction, total]
+      "INSERT INTO orders (user_id, menu_id, quantity, special_instructions, price, time_ordered, order_status, ready_at) VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING *",
+      [
+        userId,
+        menuId,
+        quantity,
+        instruction,
+        price,
+        timeOrdered,
+        orderStatus,
+        readyAt,
+      ]
     );
     return result.rows[0];
   } catch (error) {
@@ -20,7 +38,14 @@ const addMenuOrder = async(userId, menuId, quantity, instruction, total) => {
 };
 
 // add new user to database
-const addUser = async(name, email, password, phoneNumber, address, accountType) => {
+const addUser = async (
+  name,
+  email,
+  password,
+  phoneNumber,
+  address,
+  accountType
+) => {
   try {
     const result = await db.query(
       "INSERT INTO users (name, email, password, phone_number,address, account_type) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *",
@@ -34,7 +59,7 @@ const addUser = async(name, email, password, phoneNumber, address, accountType) 
 };
 
 // get user by id
-const getUserById = async(id) => {
+const getUserById = async (id) => {
   try {
     const result = await db.query("SELECT * FROM users WHERE id = $1", [id]);
     return result.rows[0];
@@ -45,7 +70,7 @@ const getUserById = async(id) => {
 };
 
 // get user by email
-const getUserByEmail = async(email) => {
+const getUserByEmail = async (email) => {
   try {
     const result = await db.query("SELECT * FROM users WHERE email = $1", [
       email,

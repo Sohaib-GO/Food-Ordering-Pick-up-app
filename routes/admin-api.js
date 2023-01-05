@@ -1,12 +1,11 @@
 const express = require("express");
 const router = express.Router();
-const menuQueries = require("../db/queries/admin");
-
+const adminQueries = require("../db/queries/admin");
 
 
 // Read all menu items
 router.get("/", (req, res) => {
-  menuQueries
+  adminQueries
     .getAllMenuItems()
     .then((menuItems) => {
       res.json({ menuItems });
@@ -18,7 +17,7 @@ router.get("/", (req, res) => {
 
 // Create a new menu item
 router.post("/", (req, res) => {
-  menuQueries
+  adminQueries
     .createMenuItem(
       req.body.food_name,
       req.body.food_description,
@@ -37,7 +36,7 @@ router.post("/", (req, res) => {
 
 // Update a single menu item
 router.put("/:id", (req, res) => {
-  menuQueries
+  adminQueries
     .updateMenuItem(
       req.params.id,
       req.body.food_name,
@@ -61,7 +60,7 @@ router.put("/:id", (req, res) => {
 
 // Delete a single menu item
 router.delete("/:id", (req, res) => {
-  menuQueries
+  adminQueries
     .deleteMenuItem(req.params.id)
     .then((deletedMenuItem) => {
       if (!deletedMenuItem) {
@@ -74,5 +73,45 @@ router.delete("/:id", (req, res) => {
       res.status(500).json({ error: err.message });
     });
 });
+
+
+
+router.get("/orders", async (req, res) => {
+  try {
+    const orders = await adminQueries.getPendingOrders();
+    res.json(orders);
+  } catch (error) {
+    console.error(error);
+    res.sendStatus(500);
+  }
+});
+
+
+// confirm order
+
+router.post("/orders/confirm", async (req, res) => {
+  try {
+    const orderId = req.body.orderId;
+    const waitTime = req.body.waitTime;
+    const readyAt = new Date(Date.now() + waitTime * 60000); // convert wait time from minutes to milliseconds
+
+    await adminQueries.updateOrder(orderId, "confirmed", readyAt);
+
+    res.json({ message: "Successfully confirmed order." });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Error confirming order." });
+  }
+});
+
+
+
+
+
+
+
+
+
+
 
 module.exports = router;

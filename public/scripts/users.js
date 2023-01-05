@@ -36,23 +36,25 @@ $("#search-button").on("click", () => {
 
 
 // add menu item to cart when the order button is clicked
-// $(document).on("click", ".order-button", function () {
-//   e.preventDefault();
-//   const container = $(this).closest(".menu-container");
-//   const menuId = container.data("id");
-// const quantity = 1;
-// const instructions = "none";
-// const price = container.find(".price").text();
-
-//   $.ajax({
-//     method: "POST",
-//     url: "/api/users/orders/add",
-//     data: {
-//       menuId: menuId,
-//       quantity : quantity,
-//       instructions : instructions,
-//       total : price,
-//     },
-//   }).done((response) => {
-//     console.log(response);
-//   });
+$(document).on("click", ".order-button", function (e) {
+  e.preventDefault();
+  const container = $(this).closest(".menu-container");
+  const menuId = container.data("id");
+  const quantity = 1;
+  const instructions = "none";
+  const price = parseFloat(container.find(".price").text().replace('$', ''));
+  const orderStatus = 'pending';
+  $.ajax({
+    method: "POST",
+    url: "/api/users/orders/add",
+    data: {
+      menuId: menuId,
+      quantity: quantity,
+      instructions: instructions,
+      price: price,
+      orderStatus: orderStatus,
+    },
+  }).done((response) => {
+    console.log(response);
+  });
+});
