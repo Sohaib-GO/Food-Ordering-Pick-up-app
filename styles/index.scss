@@ -293,7 +293,7 @@ body * {
     display: flex;
   }
   
-  @media all and (max-width:350px){
+  @media all and (max-width:550px){
     .main {
       display: flex;
       flex-direction: column;
@@ -303,15 +303,9 @@ body * {
 
   }
     
-  @media all and (max-width:750px){
-    .main {
-      display: flex;
-      flex-direction: column;
-      padding: 3rem;
-      padding-left: 115px;
-    }
+  
 
-  }
+
 
 
 

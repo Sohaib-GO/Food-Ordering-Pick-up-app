@@ -1,15 +1,4 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <%- include('partials/_header') %>
-    <link rel="stylesheet" href="/styles/menu.css">
-  </head>
-  <body>        
-  </body>
-</html>
-
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -18,6 +7,7 @@
   <link rel="stylesheet" href="/styles/main.css" />
   <link rel="stylesheet" href="/styles/layout.css"/>
   <link rel="stylesheet" href="/styles/index.css"/>
+  <link rel="stylesheet" href="/styles/header.css">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
@@ -29,6 +19,7 @@
   <title>Home Page</title>
 </head>
 <body>
+  <%- include('partials/_header') %>
   <div class="flex main" >
     <div class="main px-16 border-r border-gray-200">
       <p class="logo">Continental</p>
@@ -110,17 +101,7 @@
 
     </div>
     <div class="bg-gray-100 sidebar  ">
-      <header class="nav">
-          <li >
-            <a class="navItems m-1" href="/login">Login</a>
-          </li>
-          <li>
-            <a class="navItems m-1" href="/register" target="_blank">Register</a>
-          </li>
-          <li>
-            <a class="navItems m-1" href="/contact"target="_blank">Contact</a>
-          </li> 
-    </header> 
+
        <div class="px-6">
 
           <div class="h-12 mt-8 flex justify-center items-center">
@@ -172,7 +153,7 @@
           </div>
         <div class="flex justify-between pt-4 text-xs font-bold">
           <div class="flex flex-col">
-            <span>Persons</span>
+            <span>Person</span>
             <div class="flex items-center mt-3">
               <span class="border border-r-0 p-2 rounded-l-lg">-</span>
               <span class="border-b border-t p-2 ">1</span>
