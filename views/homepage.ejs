@@ -5,8 +5,6 @@
   <%- include('partials/_header') %>
 </head>
 <body>
-  <div class="welcome-message">Welcome, <%= typeof username !== 'undefined' ? username : 'Guest' %>!</div>
-
   <form action="/menu" method="GET">
     <button class="order-button" type="submit">
     Order Now

@@ -20,7 +20,7 @@ router.get("/", (req, res) => {
 router.post("/", async(req, res) => {
   const email = req.body.email;
   const user = await userQueries.getUserByEmail(email);
-
+  
   if (user) {
     const password = req.body.password;
     if (password === user.password) {

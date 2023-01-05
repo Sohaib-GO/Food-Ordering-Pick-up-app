@@ -28,7 +28,7 @@
       
       <div class="grid grid-cols-3 bg-orange-100 mt-12 rounded-lg ">
         <div >
-          <img src="https://image.freepik.com/free-vector/vector-cartoon-illustration-traditional-set-fast-food-meal_1441-331.jpg" alt="fooood" >
+          <img src="/images/food_delivery.jpg" >
         </div>
         <div class="row-auto flex flex-col justify-center items-center">
           <h3 class="tracking-wide text-orange-600 text-lg ml-6">$0 delivery for 30 days!&nbsp;&nbsp;&nbsp;🎉</h3>
@@ -78,10 +78,10 @@
             <a class="navItems m-1" href="/login">Login</a>
           </li>
           <li>
-            <a class="navItems m-1" href="/signup" target="_blank">Register</a>
+            <a class="navItems m-1" href="/register" target="_blank">Register</a>
           </li>
           <li>
-            <a class="navItems m-1" href="contact.ejs#contact"target="_blank">Contact</a>
+            <a class="navItems m-1" href="/contact"target="_blank">Contact</a>
           </li> 
           
           
@@ -95,7 +95,7 @@
           <div class="rounded-lg bg-yellow-400 px-3 font-bold text-xs py-1 ml-6">3</div>
         </div> 
         <div class="mt-12">
-          <p class="font-medium text-xl">My Order 😎</p>
+          <p class="font-medium text-xl">My Order</p>
         </div>
         <div class="mt-12 p-6 bg-purple-800 custom-rounded font-hairline text-xs">
           <div class="flex justify-between items-center">
@@ -149,6 +149,11 @@
           <div class="ml-auto bg-yellow-400 p-6 rounded-l-lg">
         <a href="./conf.html">Checkout <i class="ml-3 fa fa-arrow-right"></i></a>  
           </div>
+          <form action="/sms" method="POST">
+            <button id="menu-checkout-btn">
+              checkouttest
+            </button>
+          </form>
         </div>
         </div>
     </div>
