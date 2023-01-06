@@ -1,22 +1,33 @@
 body {
-  background: #ffffff;
+  background: #ABCDEF;
+  background-image: url(../images/register_bg.jpg);
   font-family: Assistant, sans-serif;
   display: flex;
-  height: 90vh;
+  min-height: 90vh;
+  background-size: cover;
 }
+
+.username_holder {
+  font-weight: bold;
+  margin-top: 25%;
+}
+
+.password_holder {
+  margin-top: 25%;
+  margin-bottom: 1px;
+  font-weight: bold;
+}
+
 .login {
-  color: white;
-  background:#136a8a;
-  background:
-    -webkit-linear-gradient(to right, #267871, #136a8a);
-  background:
-    linear-gradient(to right, #267871, #136a8a);
+  color: rgb(0, 0, 0);
+  background:#ffffff;
   margin: auto;
   box-shadow:
-    0px 2px 10px rgba(0,0,0,0.2),
-    0px 10px 20px rgba(0,0,0,0.3),
-    0px 30px 60px 1px rgba(0,0,0,0.5);
+  0px 2px 10px rgba(0,0,0,0.2),
+  0px 10px 20px rgba(0,0,0,0.3),
+  0px 30px 60px 1px rgba(0,0,0,0.5);
   border-radius: 8px;
+  border: black;
   padding: 50px;
 }
 .login .head {
@@ -33,33 +44,34 @@ body {
 .login .form input[type=text].text {
   border: none;
   background: none;
-  box-shadow: 0px 2px 0px 0px white;
+  box-shadow: 0px 2px 0px 0px rgb(117, 114, 114);
   width: 100%;
-  color: white;
+  color: rgb(237, 233, 233);
   font-size: 1em;
   outline: none;
 }
 .login .form .text::placeholder {
-  color: #D3D3D3;
+  color: #999696;
 }
 .login .form input[type=password].password {
   border: none;
   background: none;
-  box-shadow: 0px 2px 0px 0px white;
+  box-shadow: 0px 2px 0px 0px #999696;
   width: 100%;
-  color: white;
+  color: rgb(1, 1, 1);
   font-size: 1em;
   outline: none;
   margin-bottom: 20px;
   margin-top: 20px;
 }
 .login .form .password::placeholder {
-  color: #D3D3D3;
+  color: #999696;
 }
 .login .form .btn-login {
-  background: none;
+  background: #3070be;
   text-decoration: none;
-  color: white;
+  font-weight: bold;
+  color: #130f0f;
   box-shadow: 0px 0px 0px 2px white;
   border-radius: 3px;
   padding: 5px 2em;
@@ -67,18 +79,18 @@ body {
 }
 
 .btn-login {
-  background: none;
+  background: rgb(66, 66, 233);
   text-decoration: none;
-  color: white;
-  box-shadow: 0px 0px 0px 2px white;
+  color: rgb(66, 66, 223);
+  box-shadow: 0px 0px 0px 2px rgb(66, 66, 223);
   border-radius: 3px;
   margin: 40px;
   transition: 0.5s;
 }
 
 .login .form .btn-login:hover {
-  background: white;
-  color: dimgray;
+  background: rgb(188, 185, 185);
+  color: rgb(0, 0, 0);
   transition: 0.5s;
 }
 .login .forgot {

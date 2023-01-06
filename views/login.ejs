@@ -1,29 +1,33 @@
 <!DOCTYPE html>
 <html lang="en" >
-  <head>
-    <meta charset="UTF-8">
-    <title>login page</title>
-    <link href="https://fonts.googleapis.com/css?family=Assistant:400,700" rel="stylesheet">
-    <link rel="stylesheet" href="/styles/login.css">
+<body>
+  <header>
 
-  </head>
+  </header>
+<head>
 
-  <body>
-    <%- include('partials/_header') %>
+  <meta charset="UTF-8">
+  <title>login page</title>
+  <link href="https://fonts.googleapis.com/css?family=Assistant:400,700" rel="stylesheet">
+  <link rel="stylesheet" href="/styles/login.css">
+  <%- include('partials/_header') %>
 
-    <section class='login' id='login'>
-      <div class='head'>
-        <h1 class='company'>Login</h1>
-      </div>
-      <div class='form'>
-        <form action="/login" method="POST">
-          <input type="text" placeholder='Username' class='text' id='username' name="email" required><br>
-          <input type="password" placeholder='Password' class='password' name="password"><br>
-          <button class='btn-login' type="submit">Login</button>
-        </form>
-      </div>  
-    </section>
-    <%- include('partials/_footer') %>
+</head>
+  <section class='login' id='login'>
+    <div class='head'>
+    <h1 class='company'>LOGIN</h1>
+    </div>
+    <div class='form'>
+    <form action="/login" method="POST">
+    <p class="username_holder">Username</p>
+    <input type="text" placeholder='Type your username' class='text' id='username' name="email" required><br>
+    <p class="password_holder">Password</p>
+    <input type="password" placeholder='Type your password' class='password' name="password"><br>
+    <button class='btn-login' type="submit">Login</button>
+      </form>
+    </div>
+  </section>
+  <%- include('partials/_footer') %>
   </body>
 </html>
 
