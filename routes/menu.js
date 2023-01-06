@@ -8,7 +8,7 @@ router.get('/', (req, res) => {
     const username = usersDb[user_id];
     const templateVars = {username};
 
-    return res.render('menu', templateVars);
+    return res.render('index', templateVars);
   });
 
   
