@@ -75,7 +75,7 @@ app.use('/account', account);
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
 const userQueries = require("./db/queries/users");
-app.get("/", async (req, res) => {
+app.get("/", async(req, res) => {
   const userId = req.session.userId;
 
   let user;
