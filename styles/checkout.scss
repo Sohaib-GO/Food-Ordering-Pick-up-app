@@ -1,0 +1,20 @@
+body {
+  font-family: 'Poppins', sans-serif !important;
+
+}
+
+.main-container {
+  background-color: rgba(255, 255, 255, 0.9) ;
+  padding: 1rem;
+  margin: 1rem 0;
+  box-shadow: 0px 0px 0px 1px inset, #000000 0px 0px 0px 1px;
+  border-radius: 10px;
+  box-shadow: 0px 3px 15px 5px #000000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.orders_header{
+margin-right: 7rem;}
