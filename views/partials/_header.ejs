@@ -6,9 +6,6 @@
     <link rel="stylesheet" href="/styles/menu.css">
     <link rel="stylesheet" href="/styles/header.css">
     <link rel="stylesheet" href="/styles/footer.css">
-
-
-
   </head>
   <body>        
   </body>
@@ -16,23 +13,27 @@
 <header>
   <nav class="nav-header">
     <% if (username) { %>
+      <div class="nav-left">
+        <img src="/images/Restaurant_logo.jpg">
         <a class="active" href="/homepage">Home</a>
-        <a class="nav-item nav-link-left" href="/menu">Menu</a>
-        <a class="nav-item nav-link-left" href="/contact">Contact</a>
-        <a class="nav-item nav-link-left" href="/account">account</a>
-        <h5>Logged in as: <%= username%></h5>
-        
+        <a class="a" href="/">Menu</a>
+        <a class="a" href="/contact">Contact</a>
+      </div>
+      <div class="nav-right">
+        <a class="a" href="/account">Account</a>
+        <a type="submit" class="a">Logout</a>
+        <div class="logged_in">Logged in as: <%= username%></div>
         <form action="/logout" method="POST">
-          <button type="submit" class="logout-btn">logout</button>
         </form>
+      </div>  
     <% } else {%>
         <div class="topnav">
             <img  id='restraunt_logo' src="/images/Restaurant_logo.jpg">
             <div class="header_icons">
               <div clas="welcome-message">Welcome, <%= typeof username !== 'undefined' ? username : 'Guest' %>!</div>
               <a class="active" href="/homepage">Home</a>
-              <a class="nav-item nav-link-left" href="/menu">Menu</a>
-              <a class="nav-item nav-link-left" href="/contact">Contact</a>
+              <a class="" href="/menu">Menu</a>
+              <a class="" href="/contact">Contact</a>
               <a class="nav-tiem nav-link-right" href="/login">Login</a>
               <a class="nav-tiem nav-link-right" href="/register">register</a>
             </div>
