@@ -1,0 +1,35 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #ffffff;
+}
+
+.container-mt-4 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.orders_header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-mb-3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(245, 245, 245, 0.9) ;
+    padding: 1rem;
+    margin: 1rem 0;
+    box-shadow: 0px 0px 0px 1px inset, #000000 0px 0px 0px 1px;
+    border-radius: 10px;
+    box-shadow: 0px 1px 10x 5px #000000
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
