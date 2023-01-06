@@ -10,6 +10,10 @@ body * {
     flex: 3;
   }
   
+  .textwhite {
+    color: #000000 !important;
+  }
+
   .sidebar {
     flex: 1;
     background-color: #fff !important;
@@ -58,9 +62,8 @@ body * {
   .logoPic {
     display: flex;
     align-items: flex-start;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
+    width: 80px;
+    height: 80px;
     float: left;
     padding-bottom: 5px;
     margin-bottom: 5px;
@@ -276,7 +279,11 @@ body * {
   .navigation-list input {
   
   border: none;
-  border-radius: 5px;
+  border-style: solid;
+  border-width:1px;
+  border-right: #a09e9e;
+  border-left: #8f8e8e;
+  border-top: #919090;
   }
   .navigation-list li{
   
@@ -328,10 +335,13 @@ body * {
   justify-content: space-between;
   padding-left: 2rem;
   padding-right: 2rem;
+  border-bottom: #b1a7a7;
+  border-style: solid;
+  border-width: 1px;
 
-  background-image: linear-gradient(#FFB100, #FADA9D);
+  background-image: linear-gradient(#ffffff, #ffffff);
   width: 100%;
-  height: 10rem;
+  height: 5rem;
   margin: 0;
 }
 .logo-con{
@@ -354,19 +364,29 @@ body * {
   list-style-type: none;
   font-family: 'Righteous', cursive;
   font-weight: bold;
-  font-size: 1.6rem;
-  color: #8251ae;
+  font-size: 1rem;
+  color: #000000;
   padding-left: 2rem;
- 
+}
 
 
+.mt-12.p-6.bg-purple-800.custom-rounded.font-hairline.text-xs{
+  background-color: #ffffff !important;
+  border: #000000 !important;
+  border-width:  1px !important;
+  border-style: solid !important;
+  color: black !important;
+}
+.font-medium-text-xl {
+  font-size: 30px;
+  font-style: bolder !important;
 }
 .pic-box-shadow{
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 .img-shadow{
-  width: 1325px;
-  height: 475px;
+  width: 1285px;
+  height: 360px;
   margin-right: 25px;
   margin-top: 25px;
   border-radius: 10px 0 0 10px;
@@ -450,6 +470,11 @@ flex-direction: column;
   display: flex;
   flex-direction: column;
 }
+
+.fa.fa-user {
+  color: #ffffff;
+}
+
 .fav-food {
   display: flex;
   flex-direction: column;
