@@ -98,16 +98,16 @@ router.post("/orders/confirm", async (req, res) => {
   try {
     const orderId = req.body.orderId;
     const waitTime = req.body.waitTime;
-    const readyAt = new Date(Date.now() + waitTime * 60000); // convert wait time from minutes to milliseconds
+    const readyAt = new Date(Date.now() + waitTime * 60000); // waitTime is in minutes
 
     await adminQueries.updateOrder(orderId, "confirmed", readyAt);
 
-    const phoneNumber = await adminQueries.getPhoneNumberByOrderID(orderId);
-
+    const userInfo = await adminQueries.getPhoneNumberByOrderID(orderId);
+    const phoneNumber = userInfo.phone_number;
     client.messages
       .create({
         body: `Your order #${orderId} has been confirmed! It will be ready at ${readyAt.toLocaleTimeString()} `,
-        from: "+17154024150", // your Twilio phone number
+        from: "+17154024150",
         to: phoneNumber,
       })
       .then((message) => console.log(message.sid))

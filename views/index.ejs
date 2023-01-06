@@ -143,8 +143,12 @@
           </div>
           <div class="mt-12 p-6 bg-purple-800 custom-rounded font-hairline text-xs">
             <div class="flex justify-between items-center">
-              <p class="text-white">625 St Marks Ave</p>
-              <p class="text-yellow-400 cursor-pointer">Edit</p>
+              <% if (user) { %>
+                <p class="text-white"><%= user.address %></p>
+              <% } else { %>
+                <p class="text-white">Address (Not Logged in)</p>
+              <% } %>
+                <p class="text-yellow-400 cursor-pointer">Edit</p>
             </div>
             <div class="flex items-center mt-4">
               <div class="rounded-lg px-2 py-1 timer"><i class="fa fa-clock text-yellow-400"></i></div>
@@ -152,15 +156,13 @@
               <p class="text-yellow-400 cursor-pointer ml-auto">Choose time</p>
             </div>
           </div>
-          <div class="grid grid-cols-4 gap-1 mb-5  m-10" >
-            <div class="col-span-1 inline-flex items-center text-xxs font-semibold ">
-              {{item.quantity}}
+          <div class="grid grid-cols-4 gap-1 mb-5  m-10 order-info" >
+            <div class="col-span-1 inline-flex items-center text-xxs font-semibold quantity">
+           
             </div>
-            <div class="col-span-2 inline-flex items-center text-xxs font-semibold">
-              {{item.title}}
+            <div class="col-span-2 inline-flex items-center text-xxs font-semibold menu-name"">
             </div>
-            <div class="col-span-1 inline-flex justify-end items-center text-gray-600 font-hairline text-xs ">
-              {{item.price}}
+            <div class="col-span-1 inline-flex justify-end items-center text-gray-600 font-hairline text-xs price ">
             </div>
           </div>
           <div class="grid grid-cols-4 gap-1 mb-5">
@@ -176,10 +178,17 @@
             </div>
           </div>
         </div> 
-        <div class="flex-grow flex flex-col pl-6 justify-end">
+        <div class="flex-grow flex flex-col pl-6 justify-end price-tax">
+          <div class="flex justify-between items-center border-b-2 pb-2">
+            <span>Tax(5%):</span> 
+  
+  
+            <span class="text-xl font-medium pr-6 tax">$0.00</span>
+          </div>
+  
             <div class="flex justify-between items-center border-b-2 pb-2">
               <span>Total:</span>
-              <span class="text-xl font-medium pr-6">$25.97</span>
+              <span class="text-xl font-medium pr-6 total">$0.00</span>
             </div>
           <div class="flex justify-between pt-4 text-xs font-bold">
             <div class="flex flex-col">
@@ -206,9 +215,6 @@
     </div>
     <div>
       
-      <button class="btn" type="button" name="button">
-        <a href="" #top="">Top</a>
-      </button>
     </footer>
     <script src="/vendor/jquery-3.0.0.js"></script>
     <script type="module" defer src="/scripts/admin.js"></script>

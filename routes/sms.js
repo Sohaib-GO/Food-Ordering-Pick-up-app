@@ -10,10 +10,9 @@ router.post("/", async (req, res) => {
   try {
     // Fetch the order from the database
     const userId = req.session.userId;
-    console.log(userId);
+    
     const orders = await usersQueries.getOrdersByUserId(userId);
     // Send the text message using the order information
-    console.log(await usersQueries.getOrdersByUserId(userId));
     let messageBody = "";
     for (const order of orders) {
       messageBody += `A order has been placed : #${order.id}: ${order.food_name}\n`;
