@@ -7,9 +7,7 @@ const refresh = $(() => {
     url: "/api/admin",
   }).done((response) => {
     displayMenu(response.menuItems);
-    if (response.menuItems.length === 0) {
-      $("#menu-items").append("<p>No menu items available</p>");
-    }
+
     const htmlElement = document.querySelector("html");
     const filePath = htmlElement.getAttribute("data-filepath");
 
@@ -46,11 +44,13 @@ $("#create-menu-item-button").on("click", (event) => {
     const newMenuItem = response.newMenuItem;
     const $menuItemsList = $("#menu-items");
 
-    $(`<li class="menu-item">`)
-      .text(`${newMenuItem.food_name} `)
-      .appendTo($menuItemsList);
+    $().text(`${newMenuItem.food_name} `).appendTo($menuItemsList);
+    // display the new menu item with the update and delete buttons
+    displayMenu([newMenuItem]);
+
+    });
   });
-});
+
 
 // delete a menu item when the delete button is clicked
 $(document).on("click", ".delete-menu-item-button", function () {
@@ -89,31 +89,34 @@ $(document).on("click", ".update-menu-item-button", function () {
   });
 });
 
-
-
-
 // confirm the pending order
-$(document).on("click", ".confirm-order-form input[type='submit']", function (e) {
-  e.preventDefault();
-  const form = $(this).closest(".confirm-order-form");
-  const waitTime = form.find("input[name='wait-time']").val();
-  const orderId = form.closest(".pending-order").find(".order-id").text().replace("Order #", "");
-  $.ajax({
-    method: "POST",
-    url: "/api/admin/orders/confirm",
-    data: {
-      orderId: orderId,
-      waitTime: waitTime
-    },
-  }).done((response) => {
-    console.log(response);
-    form.closest(".pending-order").remove(); // remove the order element from the page
-    $('#success-message').show();
-    setTimeout(function() { // hide the success message after 5 seconds
-      $('#success-message').hide();
-    }, 5000);
-  
-  
-  });
-
-});
+$(document).on(
+  "click",
+  ".confirm-order-form input[type='submit']",
+  function (e) {
+    e.preventDefault();
+    const form = $(this).closest(".confirm-order-form");
+    const waitTime = form.find("input[name='wait-time']").val();
+    const orderId = form
+      .closest(".pending-order")
+      .find(".order-id")
+      .text()
+      .replace("Order #", "");
+    $.ajax({
+      method: "POST",
+      url: "/api/admin/orders/confirm",
+      data: {
+        orderId: orderId,
+        waitTime: waitTime,
+      },
+    }).done((response) => {
+      console.log(response);
+      form.closest(".pending-order").remove(); // remove the order element from the page
+      $("#success-message").show();
+      setTimeout(function () {
+        // hide the success message after 5 seconds
+        $("#success-message").hide();
+      }, 5000);
+    });
+  }
+);
