@@ -24,11 +24,18 @@
   });
 %>
 
+<% if (Object.keys(groupedMenuItems).length === 0) { %>
+  <div id="no-orders">There are no pending orders</div>
+<% } %>
+
 <% for (let orderId in groupedMenuItems) { %>
+
+
   <div class="pending-order">
     <h2 class="order-id"><%= `Order #${orderId}` %></h2>
     <ul class="order-items">
       <% for (let j = 0; j < groupedMenuItems[orderId].length; j++) { %>
+       
         <li>
           <span class="item-name"><%= groupedMenuItems[orderId][j].food_name %></span> x <span class="item-quantity"><%= groupedMenuItems[orderId][j].quantity %></span>
           <br>
@@ -45,8 +52,11 @@
      <input type="submit" value="Confirm Order" class="button" />
     </form>
   </div>
-  <div id="success-message"></div>
+  <div id="success-message" style="display:none;">Order confirmed!</div>
+
 <% } %>
+
+
 <script src="/vendor/jquery-3.0.0.js"></script>
 <script type="module" defer src="/scripts/admin.js"></script>
 <script  type="module" defer src="/scripts/users.js"></script>

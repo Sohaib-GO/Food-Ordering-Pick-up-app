@@ -61,4 +61,13 @@
     background-color: black;
     color: white;
   }
+
+  #success-message {
+    color: white;
+    background-color: green;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+  }
   
