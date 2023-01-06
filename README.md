@@ -3,8 +3,7 @@
 This imaginery restaurant allows users to login and register an account and order items from the menu. 
 Once checkout has checked out user will receive a text message to confirm the order and time. Front end is done with tailwind  and scss. The backend is made with NodeJS, express and EJS. The database is created with postgresql. Twilio is used as the API for texts between clients and admin.
 
-
-## Dependencies
+# Dependencies
 
 1. Node 10.x or above
 2. NPM 5.x or above
@@ -15,7 +14,7 @@ Once checkout has checked out user will receive a text message to confirm the or
 7. morgan
 8. twilio
 
-## Getting Started
+# Getting Started
 
 1. [Create](https://github.com/Sohaib-GO/Project-02) a new repository using this repository as a template.
 2. Clone your repository onto your local device.
@@ -26,13 +25,13 @@ Once checkout has checked out user will receive a text message to confirm the or
 6. Go to <http://localhost:8080/homepage> in your browser.
 
 
-## ScreenShots 
+
+##ScreenShots 
 ![Screenshot homepage](https://github.com/Sohaib-GO/Project-02/blob/master/img/home_page.png?raw=true)
 ![Screenshot of checkout Page](https://github.com/Sohaib-GO/Project-02/blob/master/img/checkout.png?raw=true)
 ![Screenshot of Login Page](https://github.com/Sohaib-GO/Project-02/blob/master/img/login.png?raw=true)
 ![Screenshot of Admin Orders Page](https://github.com/Sohaib-GO/Project-02/blob/master/img/admin_orders.png?raw=true)
 ![Screenshot of Database ERV](https://github.com/Sohaib-GO/Project-02/blob/master/img/Database-ERD.png?raw=true)
-
 
 ## How to use Application
 1. Load `localhost:8080/homepage` onto your browswer.
