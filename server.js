@@ -46,6 +46,7 @@ const menuRoutes = require('./routes/menu');
 const logoutRoutes = require('./routes/logout');
 const accountRoutes = require('./routes/account');
 const smsRoutes = require('./routes/sms');
+const account = require('./routes/admin');
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -66,17 +67,25 @@ app.use('/api/admin', adminApi);
 app.use('/admin', adminRoutes);
 app.use('/account', accountRoutes);
 app.use('/sms', smsRoutes);
-
+app.use('/account', account);
 
 // Note: mount other resources here, using the same pattern above
 
 // Home page
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
+const userQueries = require("./db/queries/users");
+app.get("/", async (req, res) => {
+  const userId = req.session.userId;
 
-app.get('/', (req, res) => {
-  res.render('index');
+  let user;
+  if (userId) {
+    user = await userQueries.getUserById(userId);
+  }
+
+  res.render("index", { user: user });
 });
+
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);

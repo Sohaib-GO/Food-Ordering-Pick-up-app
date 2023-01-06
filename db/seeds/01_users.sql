@@ -54,3 +54,23 @@ VALUES
     '456 Main St',
     'customer'
   );
+
+INSERT INTO
+  users (
+    name,
+    email,
+    password,
+    phone_number,
+    address,
+    account_type
+  )
+VALUES
+  (
+    'Random Doe', 
+    '+17802711491',
+    'random',
+    '+17802711491',
+    '456 Main St',
+    'customer'
+  );
+  

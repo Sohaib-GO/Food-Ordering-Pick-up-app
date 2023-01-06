@@ -24,8 +24,8 @@ router.post("/", async(req, res) => {
   if (user) {
     const password = req.body.password;
     if (password === user.password) {
-      req.session.user_id = user.id;
-      return res.redirect("/homepage");
+      req.session.userId = user.id;
+      return res.redirect("/");
     } else {
       return res.send("Error: incorrect password");
     }

@@ -17,12 +17,14 @@
               <h3 class="card-subtitle mb-2 text-muted">Order #<%= order.id %></h3>
               <h5 class="card-title"><%= order.food_name %></h5>
                 <p class="card-text">Price: $<%= order.price %></p>
+                <p class="card-text">Tax: $<%= order.tax %></p>
+                <p class="card-text">Total: $<%= order.total %></p>
 
               <% if (order.order_status === 'pending') { %>
                 <p>Please wait for restaurant confirmation</p>
               <% } else if (order.order_status === 'confirmed') { %>
                 <p>Your order has been confirmed!</p>
-                <p>Your order will be ready at: <%= order.ready_at %> minutes</p>
+                <p>Your order will be ready at: <%= order.ready_at %></p>
               <% } %>
             </div>
           </div>

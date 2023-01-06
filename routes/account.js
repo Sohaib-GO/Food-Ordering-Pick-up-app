@@ -4,7 +4,7 @@ const userQueries = require("../db/queries/users");
 
 
 router.get("/", async (req, res) => {
-  const userId = req.session.user_id;
+  const userId = req.session.userId;
 
   if (!userId) {
     return res.redirect("/");
@@ -13,7 +13,6 @@ router.get("/", async (req, res) => {
     // Delete expired confirmed orders
     await userQueries.deleteExpiredConfirmedOrders();
 
-    const userId = req.session.user_id;
     const orders = await userQueries.getOrdersByUserId(userId);
     const templateVars = {
       orders: orders.map((order) => {
@@ -23,6 +22,12 @@ router.get("/", async (req, res) => {
           minute: "numeric",
           hour12: true,
         });
+
+        // calculate the total price of the order + tax
+        order.tax = (order.price * order.quantity * 0.05).toFixed(2);
+        order.total = (
+          order.price * order.quantity + parseFloat(order.tax)).toFixed(2);
+
         return order;
       }),
     };
