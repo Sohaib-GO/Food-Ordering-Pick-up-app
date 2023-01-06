@@ -1,15 +1,21 @@
 footer{
-    display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
     padding-left: 2rem;
     padding-right: 2rem;
     width: 100%;
-    height: 8rem;
-    border-top: 5px #A3BB98;
-    color: #8ca680;
-    font-size: 2rem;
-    background-color: #F0ECCF;
+    border-top: 5px #ffffff;
+    color: #000000;
+    background-color: #ffffff;
 
+}
+
+.copy-r {
+    display: flex;
+    flex:start;
+}
+.footer-tag {
+    display: flex;
+    gap: 2px;
+
+    
 }
