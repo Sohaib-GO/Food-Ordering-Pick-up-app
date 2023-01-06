@@ -1,40 +1,65 @@
+* {box-sizing: border-box;}
+
 .nav-header {
+    flex-direction: row;
+    padding-left: 2rem;
+    padding-right: 2rem;
     width: 100%;
-    height: 10rem;
+    border-top: 5px #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.1rem; 
+}
+
+.nav-right {
+    display: flex;
+    flex-direction: row;
+    gap: 0.1
+}
+
+.a {
+    padding: 12px;
+    font-family: 'helvetica';
+    font-size: 25px;
+    text-decoration: none;
+    color: black;
     
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    background-color:#f9b02d;
-    color: rgb(1, 145, 145);
-    font-size: 2rem;
-    border-radius: 30px;
-    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+
 }
-.topnav{
-    width: 100%;
-    height: 10rem;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #f9b02d;
-    font-family: 'Righteous', cursive;
-    font-weight: bold;
-    font-size: 1.6rem;
-    color: #8251ae;
-    border-radius: 30px;
-    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+
+.a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.active {
+    padding: 12px;
+    font-family: 'helvetica';
+    font-size: 25px;
+    color: white;
+    background: dodgerblue;
+    text-decoration: none;
+    
 
 
 }
-.img-log{
-    border-radius: 50%;
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
-    padding: 1rem;
-    width: 20%;
+
+.logged_in {
+    padding: 12px;
+    font-family: 'helvetica';
+    font-size: 25px;
 }
+
+
 // .logo-container{
 //     flex: 1 1 30%;
 

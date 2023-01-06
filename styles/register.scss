@@ -1,15 +1,19 @@
 
+
+
+
 input {
   background-color: rgb(238, 245, 240);
   padding:10px;
 }
+
 p {
-  
-  font-family: 'Rubik Bubbles', cursive;;
+  font-family: 'Poppins' !important;
 }
+
 h1 {
-  font-family: 'Rubik Bubbles', cursive;
-  font-weight: lighter;
+  font-family: 'Poppins' bold;
+  font-weight: bolder;
 }
 
 .inp-1, .input-2 {
@@ -22,10 +26,12 @@ h1 {
   
   
 }
+
 .inp-1 p {
   padding-right: 10px;
   padding-left: 20px;
 }
+
 .input-2 p {
   padding-right: 10px;
   padding-left: 20px;
@@ -46,6 +52,7 @@ h1 {
  
   
 }
+
 .left-side {
   position: absolute;
   justify-content:flex-start;
@@ -60,6 +67,7 @@ h1 {
 
  
 }
+
 .left-side-text {
   margin-top: 230px;
   display: flex;
@@ -78,15 +86,17 @@ h1 {
   border-radius: 10px;
   width: 150px;
   background-color: rgb(118, 118, 240);
-  color: antiquewhite;
-  font-family: 'Rubik Bubbles', cursive;
+  color: rgb(255, 255, 255);
+  font-family: 'helvetica' ;
   margin-top: 5px;
 
 }
+
 .register:hover {
   background-color: rgb(131, 131, 147);
   transition: 0.5s;
 }
+
 .here {
   background-color: rgb(237, 237, 238);
   transition: 0.5s;

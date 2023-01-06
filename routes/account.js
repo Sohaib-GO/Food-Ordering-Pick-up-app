@@ -30,6 +30,7 @@ router.get("/", async (req, res) => {
 
         return order;
       }),
+      username: userId,
     };
     res.render("account", templateVars);
   } catch (error) {

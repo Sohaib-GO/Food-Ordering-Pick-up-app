@@ -8,14 +8,17 @@
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Rubik+Bubbles&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles/register.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 </head>
-<body>
-  <div>
-      <%- include('partials/_header') %>
+<body >
+  <div class="body">
   </div>
   <div >
     <div >
     <div class="right-side">
+      <p >
       <h1>Register Form</h1>
       <form class="register_form" action="/register" method="POST">
         <div class="inp-1" >
@@ -29,7 +32,7 @@
         <p>Phone Number</p>
         <input type="text" name="phone_number" size="50">
         <p>Password</p>
-        <input type="text" name="password">
+        <input type="password" name="password">
         <button type="submit" class="register">
         <p>Register</p>
         </button>

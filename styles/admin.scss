@@ -1,52 +1,57 @@
-
 body {
-  background-color: rgb(211, 243, 249);
+  background-color: rgb(255, 255, 255);
     font-family: Assistant, sans-serif;
     display: flex;
     min-height: 90vh;
   }
+
 #create-menu-item-button {
     font-family: "Rubik Bubbles", cursive;
     font-weight: lighter;
-    background-color: rgb(204, 208, 4);
-    border-radius: 11%;
+    background-color: #3070be;
+    border-radius: 6%;
     transition: 0.5s;
-    border-color:rgb(204, 208, 4);
-    color: rgb(83, 79, 79);
+    border-color: #3070be;
+    color: rgb(0, 0, 0);
   
   }
+  
 #create-menu-item-button:hover {
-    background: white;
-    color: dimgray;
+    background: #868788;
+    color: rgb(8, 5, 5);
     transition: 0.5s;
 
   }
  
 #create-menu-item-form {
-    background-color: rgb(131, 213, 229);
-    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 5px 5px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
     width: 500px;
     height: 500px;
-    border-radius: 4%; 
     display: flex;
     justify-content: center;
     align-items: center; 
     flex-direction: column; 
     transition: 0.5s;
+    outline: none;
+    outline-style: none;
+    margin-bottom: 2rem;
     
 }
 
 input {
-    background-color: rgb(238, 245, 240);
-    margin-left: 80px;
-    font-family: 'Rubik Bubbles';
-    padding: 3px;
-    margin-right: 60px;
-    border-color: white;
-    border-radius: 10px;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
-    
+  background-color: rgba(231, 220, 220, 0.246);
+  border-color: rgba(231, 220, 220, 0.246);
+  margin-left: 80px;
+  font-family: 'helvetica';
+  border-radius: 0% !important;
+  color: black !important;
+  padding: 3px 10px;
+  margin-right: 60px;
+  color: #eeeeee;
+  border-radius: 3px 10px;
   }
+
   label,  h2 {
     font-family: 'Rubik Bubbles', cursive;
     font-weight: lighter;
