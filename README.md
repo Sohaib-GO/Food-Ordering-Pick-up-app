@@ -26,14 +26,14 @@ Once checkout has checked out user will receive a text message to confirm the or
 
 
 
-##ScreenShots 
+#ScreenShots 
 ![Screenshot homepage](https://github.com/Sohaib-GO/Project-02/blob/master/img/home_page.png?raw=true)
 ![Screenshot of checkout Page](https://github.com/Sohaib-GO/Project-02/blob/master/img/checkout.png?raw=true)
 ![Screenshot of Login Page](https://github.com/Sohaib-GO/Project-02/blob/master/img/login.png?raw=true)
 ![Screenshot of Admin Orders Page](https://github.com/Sohaib-GO/Project-02/blob/master/img/admin_orders.png?raw=true)
 ![Screenshot of Database ERV](https://github.com/Sohaib-GO/Project-02/blob/master/img/Database-ERD.png?raw=true)
 
-## How to use Application
+# How to use Application
 1. Load `localhost:8080/homepage` onto your browswer.
 2. select register on the top right hand corner.
 3. place information into register form (NOTE please submit phone number with this formating `+16041112222`)
