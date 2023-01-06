@@ -1,5 +1,6 @@
 body * {
     font-family: 'Poppins', sans-serif;
+   
   }
   [v-cloak] {
     display: none;
@@ -246,7 +247,7 @@ body * {
     height: 3rem;
     padding: 30px;
     border-radius: 10px;
-    background-color: #ffffff;
+    background-color: transparent;
     list-style-type: none;
     display: flex;
     align-items:center;
