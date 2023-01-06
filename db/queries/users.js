@@ -77,10 +77,41 @@ const getUserByEmail = async (email) => {
     ]);
     return result.rows[0];
   } catch (error) {
-    console.error(error);1
+    console.error(error);
+    1;
     throw error;
   }
 };
+
+const getOrdersByUserId = async (userId) => {
+  try {
+    const result = await db.query(
+      `SELECT o.id, m.food_name , o.order_status, o.ready_at, o.price, o.quantity FROM orders o
+       JOIN menus m ON m.id = o.menu_id
+       WHERE o.user_id = $1 `,
+      [userId]
+    );
+    return result.rows;
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+};
+
+const deleteExpiredConfirmedOrders = async () => {
+  try {
+    const currentTime = new Date();
+    const result = await db.query(
+      `DELETE FROM orders WHERE order_status = 'confirmed' AND ready_at < $1`,
+      [currentTime]
+    );
+    return result.rowCount;
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+};
+
 
 module.exports = {
   getUsers,
@@ -88,4 +119,7 @@ module.exports = {
   addUser,
   getUserById,
   getUserByEmail,
+  getOrdersByUserId,
+  deleteExpiredConfirmedOrders,
+  
 };

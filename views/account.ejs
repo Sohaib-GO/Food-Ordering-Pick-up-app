@@ -4,16 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <%- include('partials/_header') %>
 </head>
 <body>
-    <h3>My account</h3>
-    <table class="user_info_table">
-        <thead>
-        
-        <tbody>
-        </tbody>
-        </thead>
-    </table>
-</body>
-</html>
+    <div class="container mt-4">
+      <h2>Your Orders</h2>
+      <% if (orders.length === 0) { %>
+        <h3>You have no orders</h3>
+      <% } else { %>
+        <% for (const order of orders) { %>
+          <div class="card mb-3">
+            <div class="card-body">
+              <h3 class="card-subtitle mb-2 text-muted">Order #<%= order.id %></h3>
+              <h5 class="card-title"><%= order.food_name %></h5>
+                <p class="card-text">Price: $<%= order.price %></p>
+
+              <% if (order.order_status === 'pending') { %>
+                <p>Please wait for restaurant confirmation</p>
+              <% } else if (order.order_status === 'confirmed') { %>
+                <p>Your order has been confirmed!</p>
+                <p>Your order will be ready at: <%= order.ready_at %> minutes</p>
+              <% } %>
+            </div>
+          </div>
+        <% } %>
+      <% } %>
+    </div>
+  </body</html>

@@ -1,3 +1,8 @@
+require("dotenv");
+const accountSid = process.env.ACace56e4e5f37db9bbc0900521773a3e5;
+const authToken = process.env.d667f6a1f1aeeb898751081b887b08b3;
+const client = require("twilio")(accountSid, authToken);
+
 const express = require("express");
 const router = express.Router();
 const adminQueries = require("../db/queries/admin");
@@ -97,6 +102,20 @@ router.post("/orders/confirm", async (req, res) => {
 
     await adminQueries.updateOrder(orderId, "confirmed", readyAt);
 
+    const phoneNumber = await adminQueries.getPhoneNumberByOrderID(orderId);
+
+    client.messages
+      .create({
+        body: `Your order #${orderId} has been confirmed! It will be ready at ${readyAt.toLocaleTimeString()} `,
+        from: "+17154024150", // your Twilio phone number
+        to: phoneNumber,
+      })
+      .then((message) => console.log(message.sid))
+      .catch((err) => console.log(err));
+
+    // Update the order status in the database
+    await adminQueries.updateOrder(orderId, "confirmed", readyAt);
+
     res.json({ message: "Successfully confirmed order." });
   } catch (error) {
     console.error(error);
@@ -104,6 +123,7 @@ router.post("/orders/confirm", async (req, res) => {
   }
 });
 
+ 
 
 
 

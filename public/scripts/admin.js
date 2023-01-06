@@ -1,5 +1,4 @@
 import { displayMenu } from "./menu-items.js";
-
 // fetch all menu items when the page loads
 const refresh = $(() => {
   // fetch all menu items when the page loads
@@ -114,5 +113,7 @@ $(document).on("click", ".confirm-order-form input[type='submit']", function (e)
       $('#success-message').hide();
     }, 5000);
   
+  
   });
+
 });
