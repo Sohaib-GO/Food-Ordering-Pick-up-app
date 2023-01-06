@@ -102,8 +102,8 @@ router.post("/orders/confirm", async (req, res) => {
 
     await adminQueries.updateOrder(orderId, "confirmed", readyAt);
 
-    const phoneNumber = await adminQueries.getPhoneNumberByOrderID(orderId);
-
+    const userInfo = await adminQueries.getPhoneNumberByOrderID(orderId);
+    const phoneNumber = userInfo.phone_number;
     client.messages
       .create({
         body: `Your order #${orderId} has been confirmed! It will be ready at ${readyAt.toLocaleTimeString()} `,
