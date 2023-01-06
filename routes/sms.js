@@ -9,9 +9,11 @@ const usersQueries = require("../db/queries/users");
 router.post("/", async (req, res) => {
   try {
     // Fetch the order from the database
-    const userId = req.session.user_id;
+    const userId = req.session.userId;
+    console.log(userId);
     const orders = await usersQueries.getOrdersByUserId(userId);
     // Send the text message using the order information
+    console.log(await usersQueries.getOrdersByUserId(userId));
     let messageBody = "";
     for (const order of orders) {
       messageBody += `A order has been placed : #${order.id}: ${order.food_name}\n`;
@@ -30,7 +32,7 @@ router.post("/", async (req, res) => {
 
     // Set the success message in the session and redirect to the homepage
     req.session.successMessage = "Order has been placed and text message sent!";
-    res.redirect("/homepage");
+    res.redirect("/account");
   } catch (error) {
     console.error(error);
 

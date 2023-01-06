@@ -102,7 +102,19 @@ body * {
 
 
   }
+
+
   
+  .order-info {
+    display: grid !important;
+    grid-template-columns: auto auto auto auto !important;
+    }
+
+
+
+
+
+
   .menu-container .empty button {
     background-color: blue;
     color: white;
