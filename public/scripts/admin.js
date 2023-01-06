@@ -8,7 +8,7 @@ const refresh = $(() => {
   }).done((response) => {
     displayMenu(response.menuItems);
 
-    const htmlElement = document.querySelector("html");
+    const htmlElement = document.querySelector("html"); 
     const filePath = htmlElement.getAttribute("data-filepath");
 
     if (filePath === "../../views/admin.ejs") {
@@ -67,14 +67,14 @@ $(document).on("click", ".delete-menu-item-button", function () {
 });
 
 $(document).on("click", ".update-menu-item-button", function () {
-  const foodName = $("#food-name").val();
+  const foodName = $("#food-name").val(); // get the value of the food name
   const foodDescription = $("#food-description").val();
   const price = $("#price").val();
   const foodCategory = $("#food-category").val();
   const imageUrl = $("#image-url").val();
 
-  const $menuItem = $(this).closest(".menu-container");
-  const id = $menuItem.data("id");
+  const $menuItem = $(this).closest(".menu-container"); // get the menu item container
+  const id = $menuItem.data("id"); // get the id of the menu item
 
   $.ajax({
     method: "put",
@@ -95,8 +95,8 @@ $(document).on(
   ".confirm-order-form input[type='submit']",
   function (e) {
     e.preventDefault();
-    const form = $(this).closest(".confirm-order-form");
-    const waitTime = form.find("input[name='wait-time']").val();
+    const form = $(this).closest(".confirm-order-form"); // get the form element
+    const waitTime = form.find("input[name='wait-time']").val(); // get the wait time
     const orderId = form
       .closest(".pending-order")
       .find(".order-id")
