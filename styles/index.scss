@@ -69,6 +69,7 @@ body * {
     justify-content: center;
   
         }
+
   .menu-container {
     position: relative;
     border-radius: 20px;
@@ -76,7 +77,7 @@ body * {
     flex-direction:row;
     align-items: flex-start;
     justify-content: center;
-    background: #8251ae;
+    background: #ffffff;
     overflow: hidden;
     height: 500px;
     width:300px !important;
@@ -93,6 +94,7 @@ body * {
     width: 100%;
     height: 230px;
     padding: 35px;
+    border-radius: 15%;
   }
   .menu-container .empty {
     position: absolute;
@@ -104,7 +106,7 @@ body * {
   }
   
   .menu-container .empty button {
-    background-color: blue;
+    background-color: #008CBA;
     color: white;
     border: none;
     padding: 8px 16px;
@@ -153,6 +155,7 @@ body * {
 
 .price {
   padding-bottom: 15px;
+  color: black
 }
 
 .popular-food {
@@ -196,23 +199,22 @@ body * {
     color: #fff;
     display: flex;
     align-items: center;
-    justify-content: space-between;
     padding: 0 7px 0 0;
   }
   
   .btn a {
     width: 150px;
-    height: 40px;
-    font-size: 15px;
+    font-size: 13px;
     text-align: center;
     padding: 12px;
     text-decoration: none;
     border: none;
-    color: #fff;
+    color: rgb(0, 0, 0);
     font-family: "Poppins", sans-serif;
-    font-weight: 700;
+    font-weight: 500;
     background-color: #f9b02d;
     border-radius: 7px;
+    margin-left: 10px;
   }
   
   .headerContainer{
