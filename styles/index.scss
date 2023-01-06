@@ -306,16 +306,7 @@ body * {
     display: flex;
   }
   
-  @media all and (max-width:550px){
-    .main {
-      display: flex;
-      flex-direction: column;
-      padding: 3rem;
-      padding-left: 115px;
-    }
-
-  }
-    
+ 
   
 
 .index-h{
@@ -386,5 +377,74 @@ body * {
   font-size: 1.2rem!important;
   color: #8251ae!important;
 
+
+}
+
+@media (max-width:500px){
+  .menu-container {
+    display: flex;
+    flex-direction: column;
+  }
+ .popular-food   {
+    display: flex;
+    flex-direction: column;
+
+ }
+ .content-box {
+  display: flex;
+  flex-direction: column;
+ }
+ .btn {
+  display: flex;
+  flex-direction: column;
+ }
+ .headerContainer {
+  display: flex;
+  flex-direction: column;
+ }
+ .navigation-list{
+  display: flex;
+  flex-direction: column;
+  margin-left: 40px;
+ }
+ .nav{
+  display: flex;
+  flex-direction: column;
+}
+
+.index-h {
+  display: flex;
+  flex-direction: column;
+}
+.side-shadow {
+  display: flex;
+  flex-direction: column;
+  margin-left: 102px;
+  margin-right: 52px;
+}
+.px-6 {
+  display: flex;
+  flex-direction: column;
+  border-top: 600px;
+}
+.main {
+display: flex;
+flex-direction: column;
+
+}
+.grid {
+  display: flex;
+  flex-direction: column;
+}
+.fav-food {
+  display: flex;
+  flex-direction: column;
+  margin-left: 50px;
+}
+.search-results {
+  display: flex;
+  flex-direction: column;
+  margin-left: 40px;
+}
 
 }
