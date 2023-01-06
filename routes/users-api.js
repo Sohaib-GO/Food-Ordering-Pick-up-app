@@ -10,6 +10,8 @@ const router = express.Router();
 const userQueries = require("../db/queries/users");
 const menuQueries = require("../db/queries/search_menu");
 router.get("/", (req, res) => {
+
+
   userQueries
     .getUsers()
     .then((users) => {
@@ -33,8 +35,13 @@ router.get("/search", (req, res) => {
 });
 
 router.post("/orders/add", async (req, res) => {
+  if (!req.session.userId) {
+
+    return res.status(401).json({ message: "Unauthorized" });
+  }
+
   try {
-    const userId = req.session.user_id;
+    const userId = req.session.userId;
     const menuId = req.body.menuId;
     const quantity = req.body.quantity;
     const instruction = req.body.instruction;
@@ -54,15 +61,14 @@ router.post("/orders/add", async (req, res) => {
       readyAt
     );
     res.json({
-      message: "Successfully added menu to order.",
+      message: "Successfully added menu item to order.",
       order: newOrder,
     });
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: "Error adding menu to order." });
+    res.status(500).json({ message: "Error adding menu item to order." });
   }
 });
-
 
 
 module.exports = router;

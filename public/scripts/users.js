@@ -44,6 +44,8 @@ $(document).on("click", ".order-button", function (e) {
   const instructions = "none";
   const price = parseFloat(container.find(".price").text().replace('$', ''));
   const orderStatus = 'pending';
+// find the value of the menu name
+  const menuName = container.find(".name").text();
   $.ajax({
     method: "POST",
     url: "/api/users/orders/add",
@@ -55,6 +57,20 @@ $(document).on("click", ".order-button", function (e) {
       orderStatus: orderStatus,
     },
   }).done((response) => {
-    console.log(response);
-  });
+    $('.order-info .quantity').html(` ${quantity} x`); // add the quantity to the order info
+    $('.order-info .price').html(`$ ${price}`); // add the price to the order info
+    $('.order-info .menu-name').html(menuName); // add the menu name to the order info
+    const tax = (price * 0.05).toFixed(2);
+    $('.price-tax .tax').html(tax); // add the tax to the order info
+    const total = (price + parseFloat(tax)).toFixed(2);
+    $('.price-tax .total').html(total); // add the total to the order info
+  }) 
+  .fail((error) => {
+    // redirect to login page if user is not logged in
+    if (error.responseJSON.message === "Unauthorized") {
+      window.location.href = "/login";
+    }
+
+  }
+  );
 });

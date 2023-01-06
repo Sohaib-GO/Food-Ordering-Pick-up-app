@@ -34,7 +34,7 @@ router.post("/", async (req, res) => {
       address
     );
     req.session.userId = newUser.id;
-    return res.status(201).send(newUser);
+    return res.redirect("/");
   } catch (error) {
     console.error(error);
     return res.status(500).send(error);
@@ -42,11 +42,11 @@ router.post("/", async (req, res) => {
 });
 
 router.get("/", (req, res) => {
-  const userId = req.session.user_id;
+  const userId = req.session.userId;
   const templateVars = { username: userId };
 
   if (userId) {
-    return res.redirect("/homepage");
+    return res.redirect("/");
   }
   return res.render("register", templateVars);
 });

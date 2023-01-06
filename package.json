@@ -24,7 +24,8 @@
     "twilio": "^3.84.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.10"
+    "nodemon": "^2.0.10",
+    "twilio-run": "^3.5.2"
   },
   "bin": {
     "node-skeleton": "resetdb.js"

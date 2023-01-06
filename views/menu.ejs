@@ -1,15 +1,4 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <%- include('partials/_header') %>
-    <link rel="stylesheet" href="/styles/menu.css">
-  </head>
-  <body>        
-  </body>
-</html>
-
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -18,6 +7,7 @@
   <link rel="stylesheet" href="/styles/main.css" />
   <link rel="stylesheet" href="/styles/layout.css"/>
   <link rel="stylesheet" href="/styles/index.css"/>
+  <link rel="stylesheet" href="/styles/header.css">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
@@ -29,8 +19,14 @@
   <title>Home Page</title>
 </head>
 <body>
+  <%- include('partials/_header') %>
   <div class="flex main" >
-    <div class="main px-16 border-r border-gray-200">      
+    <div class="main px-16 border-r border-gray-200">
+      <p class="logo">Continental</p>
+      <img class="logoPic"  src="https://library.kissclipart.com/20181207/gwe/kissclipart-surfrider-ocean-friendly-restaurants-clipart-cafe-92d444e9e8975ffd.jpg" alt="">
+      <p class="ulogo">We're better than Delissio</p> 
+      
+      
       <div class="grid grid-cols-3 bg-orange-100 mt-12 rounded-lg ">
         <div >
           <img src="/images/food_delivery.jpg" >
@@ -105,21 +101,27 @@
 
     </div>
     <div class="bg-gray-100 sidebar  ">
-      <header>
-    </header> 
+
        <div class="px-6">
 
           <div class="h-12 mt-8 flex justify-center items-center">
+          <i class="fa fa-user"></i>
+          <div class="rounded-lg bg-yellow-400 px-3 font-bold text-xs py-1 ml-6">3</div>
         </div> 
         <div class="mt-12">
           <p class="font-medium text-xl">My Order</p>
         </div>
+        <div class="mt-12 p-6 bg-purple-800 custom-rounded font-hairline text-xs">
           <div class="flex justify-between items-center">
-            <img src="/images/Map_checkout.png" >
+            <p class="text-white">625 St Marks Ave</p>
             <p class="text-yellow-400 cursor-pointer">Edit</p>
           </div>
           <div class="flex items-center mt-4">
+            <div class="rounded-lg px-2 py-1 timer"><i class="fa fa-clock text-yellow-400"></i></div>
+            <p class="text-white mx-3 ">35 min</p>
+            <p class="text-yellow-400 cursor-pointer ml-auto">Choose time</p>
           </div>
+        </div>
         <div class="grid grid-cols-4 gap-1 mb-5  m-10" >
           <div class="col-span-1 inline-flex items-center text-xxs font-semibold ">
             {{item.quantity}}
@@ -133,8 +135,10 @@
         </div>
         <div class="grid grid-cols-4 gap-1 mb-5">
           <div class="h-10 rounded-lg bg-orange-200 flex">
+            <i class="fa fa-car m-auto text-orange-500"></i>
            </div>
           <div class="col-span-2 grid grid-cols-3 text-xxs font-semibold ">
+            <p class="col-span-2 flex justify-center items-center">Delivery</p>
             <p class="flex items-center"></p>
           </div>
           <div class="flex justify-end items-center text-gray-600 font-hairline text-xs">
@@ -149,7 +153,7 @@
           </div>
         <div class="flex justify-between pt-4 text-xs font-bold">
           <div class="flex flex-col">
-            <span>Persons</span>
+            <span>Person</span>
             <div class="flex items-center mt-3">
               <span class="border border-r-0 p-2 rounded-l-lg">-</span>
               <span class="border-b border-t p-2 ">1</span>

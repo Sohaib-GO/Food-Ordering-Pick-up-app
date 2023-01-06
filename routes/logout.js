@@ -1,9 +1,9 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
 
-router.post('/', (req, res) => {
-    req.session = null;
-    return res.redirect("/homepage");
-  });
+router.post("/", (req, res) => {
+  req.session = null;
+  return res.redirect("/homepage");
+});
 
 module.exports = router;
