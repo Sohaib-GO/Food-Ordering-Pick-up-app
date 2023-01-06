@@ -1,14 +1,71 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-  <%- include('partials/_header') %>
-</head>
-<body>
-  <form action="/menu" method="GET">
-    <button class="order-button" type="submit">
-    Order Now
-    </button>
-  </form>
-</body>
-</html>
+
+
+<html>
+    <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Order food</title>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+        <link rel="stylesheet" href="/styles/homepage.css">
+        <link rel="stylesheet" href="/styles/footer.css">
+
+        <body>
+          <div class="index-h">
+
+            <div class="logo-con">
+              <div class="logo-con1">
+                <p class="logo">Continental</p>
+              </div>
+      
+              <div class="logo-con2">
+                <img class="logoPic"  src="https://library.kissclipart.com/20181207/gwe/kissclipart-surfrider-ocean-friendly-restaurants-clipart-cafe-92d444e9e8975ffd.jpg" alt="">
+                <p class="ulogo">We're better than Delissio</p> 
+              </div>
+      
+            </div>
+      
+            <div class="link-con">
+              <li >
+                <a class="navItems m-1" href="/login">Login</a>
+              </li>
+              <li>
+                <a class="navItems m-1" href="/register" target="_blank">Register</a>
+              </li>
+              <li>
+                <a class="navItems m-1" href="/contact"target="_blank">Contact</a>
+              </li> 
+      
+            </div>
+          </div>
+          <!-- <div class="navbar-top">
+            <%- include('partials/_header') %>
+          </div> -->
+         
+
+        <main class="container-fluid cover  ">
+
+            <div class="row align-items-center justify-content-center justify-content-xl-start vh-80">
+                <div class="col col-sm-7 text-center text-xl-left col-xl-4 offset-xl-2">
+                    <h1 class="mb-4">Food delivery from the best restaurants in your town</h1>
+                    <p class="mb-5 subtitle-mb">Food, drinks and desserts available for delivery or pickup.</p>
+                    <div class="input-group mb-3 shadow">
+
+                        <input type="text" class="form-control" placeholder="Enter delivery address" aria-label="Search" aria-describedby="basic-addon1">
+                        <div class="input-group-prepend">
+                            <button class="btn bg-orange text-light text-uppercase p-3" type="button">Order Now</button>
+                        </div>
+                    </div>
+              
+            </div>
+        </main>
+        <%- include('partials/_footer') %>
+     </body>
+     </html>
+
+
+
+
+
+
