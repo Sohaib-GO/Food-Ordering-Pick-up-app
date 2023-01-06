@@ -21,10 +21,11 @@
       </div>
       <div class="nav-right">
         <a class="a" href="/account">Account</a>
-        <a type="submit" class="a">Logout</a>
-        <div class="logged_in">Logged in as: <%= username%></div>
         <form action="/logout" method="POST">
+        <button type="submit" class="a">Logout</button>
         </form>
+        <div class="logged_in">Logged in as: <%= username%></div>
+
       </div>  
     <% } else {%>
         <div class="topnav">

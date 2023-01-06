@@ -1,10 +1,12 @@
 * {box-sizing: border-box;}
 
 .nav-header {
-    width: 100%;
-    height: auto;
-    display: flex;
     flex-direction: row;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    width: 100%;
+    border-top: 5px #ffffff;
+    display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: rgb(255, 255, 255);
