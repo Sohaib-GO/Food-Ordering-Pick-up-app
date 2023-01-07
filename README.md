@@ -26,7 +26,7 @@ Once checkout has checked out user will receive a text message to confirm the or
 
 
 
-#ScreenShots 
+# ScreenShots 
 ![Screenshot homepage](https://github.com/Sohaib-GO/Project-02/blob/master/img/home_page.png?raw=true)
 ![Screenshot of checkout Page](https://github.com/Sohaib-GO/Project-02/blob/master/img/checkout.png?raw=true)
 ![Screenshot of Login Page](https://github.com/Sohaib-GO/Project-02/blob/master/img/login.png?raw=true)
@@ -35,8 +35,8 @@ Once checkout has checked out user will receive a text message to confirm the or
 
 # How to use Application
 1. Load `localhost:8080/homepage` onto your browswer.
-2. select register on the top right hand corner.
-3. place information into register form (NOTE please submit phone number with this formating `+16041112222`)
+2. Select register on the top right hand corner.
+3. Place information into register form (NOTE please submit phone number with this formating `+16041112222`)
 4. Feel free to pick whatever you like from the menu and hit submit 
 5. The assigned admin number will receive a text message with your order
 5. Load `localhost:8080/account/orders` and submit what time you'd like provide to the order
